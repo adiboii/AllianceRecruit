@@ -1,0 +1,14 @@
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.AssemblyInfoInputs.cache
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.AssemblyInfo.cs
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.deps.json
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.dll
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.pdb
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Data.dll
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Data.pdb
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csprojAssemblyReference.cache
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.CopyComplete
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.dll
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.pdb

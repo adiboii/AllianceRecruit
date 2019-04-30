@@ -1,0 +1,11 @@
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Data\obj\Debug\netcoreapp2.2\BaseCode.Data.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Data\obj\Debug\netcoreapp2.2\BaseCode.Data.AssemblyInfoInputs.cache
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Data\obj\Debug\netcoreapp2.2\BaseCode.Data.AssemblyInfo.cs
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Data\bin\Debug\netcoreapp2.2\BaseCode.Data.deps.json
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Data\bin\Debug\netcoreapp2.2\BaseCode.Data.dll
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Data\bin\Debug\netcoreapp2.2\BaseCode.Data.pdb
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Data\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Data\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Data\obj\Debug\netcoreapp2.2\BaseCode.Data.csproj.CopyComplete
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Data\obj\Debug\netcoreapp2.2\BaseCode.Data.dll
+C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Data\obj\Debug\netcoreapp2.2\BaseCode.Data.pdb
