@@ -15,7 +15,8 @@
       "launchUrl": "http://localhost:55731",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "ancmHostingModel": "OutOfProcess"
     },
     "BaseCode.API": {
       "commandName": "Project",

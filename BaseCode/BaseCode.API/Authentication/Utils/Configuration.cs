@@ -6,7 +6,7 @@ namespace BaseCode.API.Utilities
     public class Configuration
     {
         public static IConfigurationRoot Config { get; set; }
-
+        
         static Configuration()
         {
             var builder = new ConfigurationBuilder()
@@ -14,7 +14,7 @@ namespace BaseCode.API.Utilities
              .AddJsonFile("appsettings.json");
             Config = builder.Build();
 
-            Config = Config;
+            Configuration.Config = Config;
         }
 
         public static string DbConnection => Config["DefaultConnection"];

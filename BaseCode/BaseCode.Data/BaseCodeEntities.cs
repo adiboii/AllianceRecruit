@@ -20,13 +20,6 @@ namespace BaseCode.Data
                 .Where(foreignKeysTables => !foreignKeysTables.IsOwnership && 
                        foreignKeysTables.DeleteBehavior == DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<RefreshToken>()
-               .HasAlternateKey(c => c.Username)
-               .HasName("refreshToken_UserId");
-
-            modelBuilder.Entity<RefreshToken>()
-               .HasAlternateKey(c => c.Token)
-               .HasName("refreshToken_Token");
 
             foreach (var table in cascadeTables)
             {
@@ -36,21 +29,17 @@ namespace BaseCode.Data
             base.OnModelCreating(modelBuilder);
         }
 
-        public void InsertNew(RefreshToken token)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var tokenModel = RefreshToken.SingleOrDefault(i => i.Username == token.Username);
-            if (tokenModel != null)
-            {
-                RefreshToken.Remove(tokenModel);
-                SaveChanges();
-            }
-            RefreshToken.Add(token);
-            SaveChanges();
+            base.OnConfiguring(optionsBuilder);
+            optionsBuilder.EnableSensitiveDataLogging();
         }
 
-        public virtual DbSet<Student> Student { get; set; }
-        public virtual DbSet<User> User { get; set; }
-        public virtual DbSet<Client> Client { get; set; }
-        public virtual DbSet<RefreshToken> RefreshToken { get; set; }
+        public virtual DbSet<Subject> Subject { get; set; }
+        public virtual DbSet<Instructor> Instructor { get; set; }
+        public virtual DbSet<Class> Class { get; set; }
+
+        public virtual DbSet<PersonalInformation> PersonalInformation { get; set; }
+
     }
 }

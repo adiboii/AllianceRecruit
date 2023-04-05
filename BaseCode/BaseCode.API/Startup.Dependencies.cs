@@ -17,14 +17,16 @@ namespace BaseCode.API
             services.AddScoped<ClaimsProvider, ClaimsProvider>();
 
             // Services
-            services.AddScoped<IClientService, ClientService>();            
-            services.AddScoped<IStudentService, StudentService>();
-            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ISubjectService, SubjectService>();
+            services.AddScoped<IInstructorService, InstructorService>();    
+            services.AddScoped<IClassService, ClassService>();
+            services.AddScoped<IPersonalInformationService, PersonalInformationService>();
 
             // Repositories
-            services.AddScoped<IClientRepository, ClientRepository>();
-            services.AddScoped<IStudentRepository, StudentRepository>();
-            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ISubjectRepository, SubjectRepository>();
+            services.AddScoped<IInstructorRepository, InstructorRepository>();  
+            services.AddScoped<IClassRepository, ClassRepository>();
+            services.AddScoped<IPersonalInformationRepository, PersonalInformationRepository>();
         }
     }
 }

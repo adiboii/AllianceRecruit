@@ -38,8 +38,8 @@ namespace BaseCode.API
 
         private void ConfigureAuth(IApplicationBuilder app)
         {
-            app.UseMiddleware<TokenProviderMiddleware>();
-            app.UseMiddleware<RefreshTokenProviderMiddleware>();
+            //app.UseMiddleware<TokenProviderMiddleware>();
+            //app.UseMiddleware<RefreshTokenProviderMiddleware>();
         }
     }
 }

@@ -23,7 +23,7 @@ namespace BaseCode.API
             this.ConfigureCors(services);               // Configuration for CORS        
             this.ConfigureSwaggerGen(services);         // Configuration for Swagger                        
             this.ConfigureAuth(services);               // Configuration for Authentication logic
-            this.ConfigureMVC(services);                // Configuration for MVC            
+            this.ConfigureMVC(services);                // Configuration for MVC      
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

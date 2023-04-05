@@ -1,6 +1,7 @@
 ﻿using BaseCode.Data.Contracts;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 
 namespace BaseCode.Data.Repositories
 {

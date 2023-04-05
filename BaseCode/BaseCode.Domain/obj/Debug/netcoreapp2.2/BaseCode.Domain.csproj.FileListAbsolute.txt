@@ -12,3 +12,80 @@ C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Domain\ob
 C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.CopyComplete
 C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.dll
 C:\Users\Owner\Documents\Visual Studio 2017\Projects\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.pdb
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API v2\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.deps.json
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API v2\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.dll
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API v2\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.pdb
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API v2\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Data.dll
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API v2\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Data.pdb
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API v2\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csprojAssemblyReference.cache
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API v2\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.AssemblyInfoInputs.cache
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API v2\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.AssemblyInfo.cs
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API v2\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.CoreCompileInputs.cache
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API v2\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.CopyComplete
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API v2\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.dll
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API v2\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.pdb
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.deps.json
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.dll
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.pdb
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Data.dll
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Data.pdb
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.AssemblyReference.cache
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.AssemblyInfoInputs.cache
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.AssemblyInfo.cs
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.CoreCompileInputs.cache
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.CopyComplete
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.dll
+D:\Projects\PMO Works\TFS\BaseCodes\ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.pdb
+C:\Users\cymme\Documents\School\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.AssemblyReference.cache
+C:\Users\cymme\Documents\School\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cymme\Documents\School\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.AssemblyInfoInputs.cache
+C:\Users\cymme\Documents\School\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.AssemblyInfo.cs
+C:\Users\cymme\Documents\School\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.CoreCompileInputs.cache
+C:\Users\cymme\Documents\School\CoreAPI\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.deps.json
+C:\Users\cymme\Documents\School\CoreAPI\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.dll
+C:\Users\cymme\Documents\School\CoreAPI\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.pdb
+C:\Users\cymme\Documents\School\CoreAPI\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Data.dll
+C:\Users\cymme\Documents\School\CoreAPI\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Data.pdb
+C:\Users\cymme\Documents\School\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.CopyComplete
+C:\Users\cymme\Documents\School\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.dll
+C:\Users\cymme\Documents\School\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.pdb
+C:\Users\Adi Reyes\Desktop\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.deps.json
+C:\Users\Adi Reyes\Desktop\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.dll
+C:\Users\Adi Reyes\Desktop\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.pdb
+C:\Users\Adi Reyes\Desktop\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Data.dll
+C:\Users\Adi Reyes\Desktop\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Data.pdb
+C:\Users\Adi Reyes\Desktop\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.AssemblyReference.cache
+C:\Users\Adi Reyes\Desktop\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Adi Reyes\Desktop\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.AssemblyInfoInputs.cache
+C:\Users\Adi Reyes\Desktop\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.AssemblyInfo.cs
+C:\Users\Adi Reyes\Desktop\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Adi Reyes\Desktop\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.CopyComplete
+C:\Users\Adi Reyes\Desktop\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.dll
+C:\Users\Adi Reyes\Desktop\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.pdb
+C:\Users\Adi Reyes\Desktop\School\Alliance\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.deps.json
+C:\Users\Adi Reyes\Desktop\School\Alliance\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.dll
+C:\Users\Adi Reyes\Desktop\School\Alliance\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.pdb
+C:\Users\Adi Reyes\Desktop\School\Alliance\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Data.dll
+C:\Users\Adi Reyes\Desktop\School\Alliance\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Data.pdb
+C:\Users\Adi Reyes\Desktop\School\Alliance\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.AssemblyReference.cache
+C:\Users\Adi Reyes\Desktop\School\Alliance\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Adi Reyes\Desktop\School\Alliance\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.AssemblyInfoInputs.cache
+C:\Users\Adi Reyes\Desktop\School\Alliance\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.AssemblyInfo.cs
+C:\Users\Adi Reyes\Desktop\School\Alliance\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Adi Reyes\Desktop\School\Alliance\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.CopyComplete
+C:\Users\Adi Reyes\Desktop\School\Alliance\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.dll
+C:\Users\Adi Reyes\Desktop\School\Alliance\Maranga_CoreAPI\CoreAPI\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.pdb
+C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.deps.json
+C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.dll
+C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.pdb
+C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Data.dll
+C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Data.pdb
+C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.AssemblyReference.cache
+C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.AssemblyInfoInputs.cache
+C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.AssemblyInfo.cs
+C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.CopyComplete
+C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.dll
+C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.pdb
