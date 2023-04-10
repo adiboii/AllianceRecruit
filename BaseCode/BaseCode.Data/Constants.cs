@@ -157,5 +157,17 @@
             public const string JobRequirementDoesNotExist = "Job Requirement does not exist.";
             public const string JobRequirementExists = "Job Requirement already exists.";
         }
+
+        public class JobDescription
+        {
+            // Success Messages
+            public const string JobDescriptionSuccessAdd = "Job Description added successfully.";
+            public const string JobDescriptionSuccessDelete = "Job Description removed successfully.";
+            public const string JobDescriptionUpdateSuccess = "Job Description updated successfully.";
+
+            // Error Messages
+            public const string JobDescriptionDoesNotExist = "Job Description does not exist.";
+            public const string JobDescriptionExists = "Job Description already exists.";
+        }
     }
 }
