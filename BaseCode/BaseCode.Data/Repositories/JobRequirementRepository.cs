@@ -24,7 +24,7 @@ namespace BaseCode.Data.Repositories
         {
             var jobRequirementUpdate = FindJobRequirement(jobRequirement.Id);
             jobRequirementUpdate.JobId = jobRequirement.JobId;
-            jobRequirementUpdate.JobDescription = jobRequirement.JobDescription;
+            jobRequirementUpdate.Requirement = jobRequirement.Requirement;
             UnitOfWork.SaveChanges();
         }
 
@@ -41,7 +41,7 @@ namespace BaseCode.Data.Repositories
 
         public bool JobRequirementExists(JobRequirement jobRequirement)
         {
-            return GetDbSet<JobRequirement>().Any(x => x.JobDescription == jobRequirement.JobDescription);    
+            return GetDbSet<JobRequirement>().Any(x => x.Requirement == jobRequirement.Requirement);    
         }
 
         public IQueryable<JobRequirement> RetrieveAll()
@@ -64,7 +64,7 @@ namespace BaseCode.Data.Repositories
              .Select(jobRequirement => new
              {
                 jobId = jobRequirement.Id,
-                description = jobRequirement.JobDescription,
+                requirement = jobRequirement.Requirement,
              }).ToList();
 
             var pagination = new

@@ -27,6 +27,9 @@ namespace BaseCode.API
 
                 cfg.CreateMap<JobRequirement, JobRequirementViewModel>();
                 cfg.CreateMap<JobRequirementViewModel, JobRequirement>();
+
+                cfg.CreateMap<JobDescription, JobDescriptionViewModel>();
+                cfg.CreateMap<JobDescriptionViewModel, JobDescription>();
    
             });
 

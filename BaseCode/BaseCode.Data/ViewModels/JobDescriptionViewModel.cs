@@ -7,12 +7,12 @@ using Newtonsoft.Json;
 
 namespace BaseCode.Data.ViewModels
 {
-    public class JobRequirementViewModel
+    public class JobDescriptionViewModel
     {
         [JsonProperty("job_id")]
         public int JobId { get; set; }
 
-        [JsonProperty("requirement")]
-        public string Requirement { get; set; }
+        [JsonProperty("description")]
+        public string Description { get; set; }
     }
 }

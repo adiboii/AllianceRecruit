@@ -7,17 +7,17 @@ using System.Text;
 
 namespace BaseCode.Data.Models
 {
-    public class JobRequirement
+    public class JobDescription
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("JobRequirementId")]
+        [Column("JobDescriptionId")]
         public int Id { get; set; }
 
         [Column("JobId")]
         public int JobId { get; set; }
 
-        [Column("Requirement")]
-        public string Requirement { get; set; }
+        [Column("Description")]
+        public string Description { get; set; }
     }
 }
