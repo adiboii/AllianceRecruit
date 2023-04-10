@@ -38,8 +38,7 @@ namespace BaseCode.Data
         public virtual DbSet<Subject> Subject { get; set; }
         public virtual DbSet<Instructor> Instructor { get; set; }
         public virtual DbSet<Class> Class { get; set; }
-
         public virtual DbSet<PersonalInformation> PersonalInformation { get; set; }
-
+        public virtual DbSet<JobRequirement> JobRequirement { get; set; }
     }
 }
