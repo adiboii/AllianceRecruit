@@ -21,12 +21,13 @@ namespace BaseCode.API
             services.AddScoped<IInstructorService, InstructorService>();    
             services.AddScoped<IClassService, ClassService>();
             services.AddScoped<IPersonalInformationService, PersonalInformationService>();
-
+            services.AddScoped<IJobRequirementService, JobRequirementService>();
             // Repositories
             services.AddScoped<ISubjectRepository, SubjectRepository>();
             services.AddScoped<IInstructorRepository, InstructorRepository>();  
             services.AddScoped<IClassRepository, ClassRepository>();
             services.AddScoped<IPersonalInformationRepository, PersonalInformationRepository>();
+            services.AddScoped<IJobRequirementRepository, JobRequirementRepository>();
         }
     }
 }

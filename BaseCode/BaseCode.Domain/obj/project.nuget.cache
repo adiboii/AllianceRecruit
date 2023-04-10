@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WmTrK3yLGNxWh742qSP1eUe5LW70Wsm9DbUrryyx9hGJ81NFOZt53QAeGDnnCJoQ1trWeALWNL5v1KjPV1vc9g==",
+  "dgSpecHash": "8gBjEGmI0utPdgRcZMZdWclLaEoQ85OWlLZDoW3QlzKzi12Xu0C1B4Uey9tpGTburYG27JAhY17ZwUykVb7DZA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Adi Reyes\\Desktop\\School\\Alliance\\AllianceRecruit ASP .NET Core API\\BaseCode\\BaseCode.Domain\\BaseCode.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Adi Reyes\\Desktop\\School\\Alliance\\Alliance ASP .NET Core API\\BaseCode\\BaseCode.Domain\\BaseCode.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Adi Reyes\\.nuget\\packages\\automapper\\8.0.0\\automapper.8.0.0.nupkg.sha512",
     "C:\\Users\\Adi Reyes\\.nuget\\packages\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",

@@ -89,3 +89,16 @@ C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\Ba
 C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.CopyComplete
 C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.dll
 C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.pdb
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.deps.json
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.dll
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Domain.pdb
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Data.dll
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.Domain\bin\Debug\netcoreapp2.2\BaseCode.Data.pdb
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.AssemblyReference.cache
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.AssemblyInfoInputs.cache
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.AssemblyInfo.cs
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.csproj.CopyComplete
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.dll
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.Domain\obj\Debug\netcoreapp2.2\BaseCode.Domain.pdb

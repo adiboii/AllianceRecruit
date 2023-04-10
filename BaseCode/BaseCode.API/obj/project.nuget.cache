@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MHBgSVE4HS56hsZEiUKmw42twAwI/z/ED633/CpBlkbblemCSI5vETYoz1gNSgSBNbwfoDIU0yLjNwkzhrmzoA==",
+  "dgSpecHash": "Br0Q9P3jZB8i6g1+sfNMaGVTOAqJWkqhWn3n2nii6DULb9QIgIbEwhA15JcLoFzhK92zBX81tXqBhkwmT7zMqA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Adi Reyes\\Desktop\\School\\Alliance\\AllianceRecruit ASP .NET Core API\\BaseCode\\BaseCode.API\\BaseCode.API.csproj",
+  "projectFilePath": "C:\\Users\\Adi Reyes\\Desktop\\School\\Alliance\\Alliance ASP .NET Core API\\BaseCode\\BaseCode.API\\BaseCode.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Adi Reyes\\.nuget\\packages\\automapper\\8.0.0\\automapper.8.0.0.nupkg.sha512",
     "C:\\Users\\Adi Reyes\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",

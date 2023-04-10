@@ -230,3 +230,37 @@ C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\Ba
 C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\BaseCode.API.dll
 C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\BaseCode.API.pdb
 C:\Users\Adi Reyes\Desktop\School\Alliance\Reyes - ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\BaseCode.API.genruntimeconfig.cache
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\bin\Debug\netcoreapp2.2\appsettings_default.Development.json
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\bin\Debug\netcoreapp2.2\appsettings_default.json
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\bin\Debug\netcoreapp2.2\BaseCode.API.deps.json
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\bin\Debug\netcoreapp2.2\BaseCode.API.runtimeconfig.json
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\bin\Debug\netcoreapp2.2\BaseCode.API.runtimeconfig.dev.json
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\bin\Debug\netcoreapp2.2\BaseCode.API.dll
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\bin\Debug\netcoreapp2.2\BaseCode.API.pdb
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\bin\Debug\netcoreapp2.2\BaseCode.API.Views.dll
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\bin\Debug\netcoreapp2.2\BaseCode.API.Views.pdb
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\bin\Debug\netcoreapp2.2\BaseCode.Data.dll
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\bin\Debug\netcoreapp2.2\BaseCode.Domain.dll
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\bin\Debug\netcoreapp2.2\BaseCode.Data.pdb
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\bin\Debug\netcoreapp2.2\BaseCode.Domain.pdb
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\BaseCode.API.csproj.AssemblyReference.cache
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\BaseCode.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\BaseCode.API.AssemblyInfoInputs.cache
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\BaseCode.API.AssemblyInfo.cs
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\BaseCode.API.csproj.CoreCompileInputs.cache
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\BaseCode.API.RazorAssemblyInfo.cache
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\BaseCode.API.RazorAssemblyInfo.cs
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\BaseCode.API.TagHelpers.input.cache
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\BaseCode.API.TagHelpers.output.cache
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\BaseCode.API.RazorCoreGenerate.cache
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\Razor\Views\Error\Error.cshtml.g.cs
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\BaseCode.API.RazorTargetAssemblyInfo.cache
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\BaseCode.API.RazorTargetAssemblyInfo.cs
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\BaseCode.API.Views.pdb
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\BaseCode.API.csproj.CopyComplete
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\BaseCode.API.dll
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\BaseCode.API.pdb
+C:\Users\Adi Reyes\Desktop\School\Alliance\Alliance ASP .NET Core API\BaseCode\BaseCode.API\obj\Debug\netcoreapp2.2\BaseCode.API.genruntimeconfig.cache

@@ -146,6 +146,16 @@
             public const string PersonalInformationAddressTooLong = "Address should not exceed 500 characters.";
         }
 
+        public class JobRequirement
+        {
+            // Success Messages
+            public const string JobRequirementSuccessAdd = "Job Requirement added successfully.";
+            public const string JobRequirementSuccessDelete = "Job Requirement removed successfully.";
+            public const string JobRequirementUpdateSuccess = "Job Requirement updated successfully.";
 
+            // Error Messages
+            public const string JobRequirementDoesNotExist = "Job Requirement does not exist.";
+            public const string JobRequirementExists = "Job Requirement already exists.";
+        }
     }
 }

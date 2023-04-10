@@ -6179,11 +6179,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Adi Reyes\\Desktop\\School\\Alliance\\AllianceRecruit ASP .NET Core API\\BaseCode\\BaseCode.Domain\\BaseCode.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Adi Reyes\\Desktop\\School\\Alliance\\Alliance ASP .NET Core API\\BaseCode\\BaseCode.Domain\\BaseCode.Domain.csproj",
       "projectName": "BaseCode.Domain",
-      "projectPath": "C:\\Users\\Adi Reyes\\Desktop\\School\\Alliance\\AllianceRecruit ASP .NET Core API\\BaseCode\\BaseCode.Domain\\BaseCode.Domain.csproj",
+      "projectPath": "C:\\Users\\Adi Reyes\\Desktop\\School\\Alliance\\Alliance ASP .NET Core API\\BaseCode\\BaseCode.Domain\\BaseCode.Domain.csproj",
       "packagesPath": "C:\\Users\\Adi Reyes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Adi Reyes\\Desktop\\School\\Alliance\\AllianceRecruit ASP .NET Core API\\BaseCode\\BaseCode.Domain\\obj\\",
+      "outputPath": "C:\\Users\\Adi Reyes\\Desktop\\School\\Alliance\\Alliance ASP .NET Core API\\BaseCode\\BaseCode.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -6207,8 +6207,8 @@
         "netcoreapp2.2": {
           "targetAlias": "netcoreapp2.2",
           "projectReferences": {
-            "C:\\Users\\Adi Reyes\\Desktop\\School\\Alliance\\AllianceRecruit ASP .NET Core API\\BaseCode\\BaseCode.Data\\BaseCode.Data.csproj": {
-              "projectPath": "C:\\Users\\Adi Reyes\\Desktop\\School\\Alliance\\AllianceRecruit ASP .NET Core API\\BaseCode\\BaseCode.Data\\BaseCode.Data.csproj"
+            "C:\\Users\\Adi Reyes\\Desktop\\School\\Alliance\\Alliance ASP .NET Core API\\BaseCode\\BaseCode.Data\\BaseCode.Data.csproj": {
+              "projectPath": "C:\\Users\\Adi Reyes\\Desktop\\School\\Alliance\\Alliance ASP .NET Core API\\BaseCode\\BaseCode.Data\\BaseCode.Data.csproj"
             }
           }
         }
