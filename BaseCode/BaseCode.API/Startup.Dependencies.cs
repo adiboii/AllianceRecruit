@@ -23,6 +23,8 @@ namespace BaseCode.API
             services.AddScoped<IPersonalInformationService, PersonalInformationService>();
             services.AddScoped<IJobRequirementService, JobRequirementService>();
             services.AddScoped<IJobDescriptionService, JobDescriptionService>();
+            services.AddScoped<IAttachmentService, AttachmentService>();
+
             // Repositories
             services.AddScoped<ISubjectRepository, SubjectRepository>();
             services.AddScoped<IInstructorRepository, InstructorRepository>();  
@@ -30,6 +32,7 @@ namespace BaseCode.API
             services.AddScoped<IPersonalInformationRepository, PersonalInformationRepository>();
             services.AddScoped<IJobRequirementRepository, JobRequirementRepository>();
             services.AddScoped<IJobDescriptionRepository, JobDescriptionRepository>();
+            services.AddScoped<IAttachmentRepository, AttachmentRepository>();
         }
     }
 }

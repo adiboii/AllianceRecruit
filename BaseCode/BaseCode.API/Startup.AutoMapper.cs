@@ -17,7 +17,6 @@ namespace BaseCode.API
                 cfg.CreateMap<Instructor, InstructorViewModel>();
                 cfg.CreateMap<InstructorViewModel, Instructor>();
         
-
                 cfg.CreateMap<Class, ClassViewModel>();
                 cfg.CreateMap<ClassViewModel, Class>();
                 cfg.CreateMap<ClassViewModel, Instructor>();
@@ -30,7 +29,9 @@ namespace BaseCode.API
 
                 cfg.CreateMap<JobDescription, JobDescriptionViewModel>();
                 cfg.CreateMap<JobDescriptionViewModel, JobDescription>();
-   
+                
+                cfg.CreateMap<Attachment, AttachmentViewModel>();
+                cfg.CreateMap<AttachmentViewModel, Attachment>();
             });
 
             services.AddSingleton(Config.CreateMapper());
