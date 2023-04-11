@@ -19,6 +19,30 @@ namespace BaseCode.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("BaseCode.Data.Models.Attachment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("AttachmentId")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("FormalPhoto")
+                        .HasColumnName("FormalPhoto");
+
+                    b.Property<string>("LinkedInProfile")
+                        .HasColumnName("LinkedInProfile");
+
+                    b.Property<string>("PortfolioUrl")
+                        .HasColumnName("PortfolioUrl");
+
+                    b.Property<string>("Resume")
+                        .HasColumnName("Resume");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Attachment");
+                });
+
             modelBuilder.Entity("BaseCode.Data.Models.Class", b =>
                 {
                     b.Property<int>("Id")
