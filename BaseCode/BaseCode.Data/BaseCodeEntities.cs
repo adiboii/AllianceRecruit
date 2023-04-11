@@ -41,5 +41,6 @@ namespace BaseCode.Data
         public virtual DbSet<PersonalInformation> PersonalInformation { get; set; }
         public virtual DbSet<JobRequirement> JobRequirement { get; set; }
         public virtual DbSet<JobDescription> JobDescription { get; set; }
+        public virtual DbSet<Attachment> Attachment { get; set; }
     }
 }
