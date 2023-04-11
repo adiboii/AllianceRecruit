@@ -40,7 +40,7 @@ namespace BaseCode.API.Controllers
         public HttpResponseMessage GetJobDescription(int Id)
         {
             var personalInformation = _jobDescriptionService.FindJobDescription(Id);
-            return personalInformation != null ? Helper.ComposeResponse(HttpStatusCode.OK, personalInformation) : Helper.ComposeResponse(HttpStatusCode.NotFound, Constants.PersonalInformation.PersonalInformationDoesNotExist);
+            return personalInformation != null ? Helper.ComposeResponse(HttpStatusCode.OK, personalInformation) : Helper.ComposeResponse(HttpStatusCode.NotFound, Constants.JobDescription.JobDescriptionDoesNotExist);
         }
 
         [HttpPost]

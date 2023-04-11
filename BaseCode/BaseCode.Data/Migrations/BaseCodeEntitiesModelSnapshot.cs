@@ -117,6 +117,24 @@ namespace BaseCode.Data.Migrations
                     b.ToTable("Instructor");
                 });
 
+            modelBuilder.Entity("BaseCode.Data.Models.Job", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("JobId")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("JobTitle")
+                        .HasColumnName("JobTitle");
+
+                    b.Property<string>("Location")
+                        .HasColumnName("Location");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Jobs");
+                });
+
             modelBuilder.Entity("BaseCode.Data.Models.JobDescription", b =>
                 {
                     b.Property<int>("Id")
@@ -127,10 +145,16 @@ namespace BaseCode.Data.Migrations
                     b.Property<string>("Description")
                         .HasColumnName("Description");
 
-                    b.Property<int>("JobId")
-                        .HasColumnName("JobId");
+                    b.Property<int?>("JobDescriptionId")
+                        .HasColumnName("JobDescriptionId1");
+
+                    b.Property<int>("JobId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("JobDescriptionId");
+
+                    b.HasIndex("JobId");
 
                     b.ToTable("JobDescription");
                 });
@@ -142,13 +166,19 @@ namespace BaseCode.Data.Migrations
                         .HasColumnName("JobRequirementId")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("JobId")
-                        .HasColumnName("JobId");
+                    b.Property<int>("JobId");
+
+                    b.Property<int?>("JobRequirementId")
+                        .HasColumnName("JobRequirementId1");
 
                     b.Property<string>("Requirement")
                         .HasColumnName("Requirement");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("JobId");
+
+                    b.HasIndex("JobRequirementId");
 
                     b.ToTable("JobRequirement");
                 });
@@ -405,6 +435,30 @@ namespace BaseCode.Data.Migrations
                         .WithMany()
                         .HasForeignKey("SubjectId")
                         .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("BaseCode.Data.Models.JobDescription", b =>
+                {
+                    b.HasOne("BaseCode.Data.Models.JobDescription")
+                        .WithMany("JobDescriptions")
+                        .HasForeignKey("JobDescriptionId");
+
+                    b.HasOne("BaseCode.Data.Models.Job", "Job")
+                        .WithMany("JobDescriptions")
+                        .HasForeignKey("JobId")
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("BaseCode.Data.Models.JobRequirement", b =>
+                {
+                    b.HasOne("BaseCode.Data.Models.Job", "Job")
+                        .WithMany("JobRequirements")
+                        .HasForeignKey("JobId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("BaseCode.Data.Models.JobRequirement")
+                        .WithMany("JobRequirements")
+                        .HasForeignKey("JobRequirementId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

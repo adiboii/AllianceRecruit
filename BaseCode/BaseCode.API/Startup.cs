@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -47,6 +48,7 @@ namespace BaseCode.API
             this.ConfigureRoutes(app);      // Configuration for API controller routing
             this.ConfigureSwagger(app);     // Configuration fow Swagger
             this.ConfigureAuth(app);        // Configuration for Token Authentication
+
         }
     }
 }
