@@ -181,5 +181,17 @@
             public const string AttachmentDoesNotExist = "Attachment does not exist.";
             public const string AttachmentExists = "Attachment already exists.";
         }
+
+        public class Job
+        {
+            // Success Messages
+            public const string JobSuccessAdd = "Job added successfully.";
+            public const string JobSuccessDelete = "Job removed successfully.";
+            public const string JobSuccessUpdate = "Job updated successfully.";
+
+            // Error Messages
+            public const string JobDoesNotExist = "Job does not exist.";
+            public const string JobExists = "Job already exists.";
+        }
     }
 }

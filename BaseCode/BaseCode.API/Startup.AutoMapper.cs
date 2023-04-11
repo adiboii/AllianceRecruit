@@ -32,6 +32,9 @@ namespace BaseCode.API
                 
                 cfg.CreateMap<Attachment, AttachmentViewModel>();
                 cfg.CreateMap<AttachmentViewModel, Attachment>();
+
+                cfg.CreateMap<Job, JobViewModel>();
+                cfg.CreateMap<JobViewModel, Job>();
             });
 
             services.AddSingleton(Config.CreateMapper());
