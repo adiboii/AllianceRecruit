@@ -4,6 +4,13 @@
 
 /BaseCode/.vs/BaseCode/FileContentIndex
 /.vs
+<<<<<<< HEAD
 /BaseCode/BaseCode.API/obj/Debug/netcoreapp2.2/BaseCode.API.csproj.AssemblyReference.cache
 /BaseCode/BaseCode.Domain/obj/Debug/netcoreapp2.2/BaseCode.Domain.csproj.AssemblyReference.cache
 /BaseCode/.vs/BaseCode/v17/.suo
+=======
+/BaseCode/.vs/BaseCode/v17/.suo
+/BaseCode/.vs/BaseCode/DesignTimeBuild/.dtbcache.v2
+>>>>>>> bd04814e5553393bd432de7b6766e7f5323081f2
+/BaseCode/BaseCode.API/obj/Debug/netcoreapp2.2/BaseCode.API.csproj.AssemblyReference.cache~bd04814e5553393bd432de7b6766e7f5323081f2
+/BaseCode/BaseCode.Domain/obj/Debug/netcoreapp2.2/BaseCode.Domain.csproj.AssemblyReference.cache~bd04814e5553393bd432de7b6766e7f5323081f2
