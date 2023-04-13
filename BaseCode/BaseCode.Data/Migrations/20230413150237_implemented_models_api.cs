@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BaseCode.Data.Migrations
 {
-    public partial class initial : Migration
+    public partial class implemented_models_api : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -48,39 +48,93 @@ namespace BaseCode.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Attachment",
+                columns: table => new
+                {
+                    AttachmentId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    LinkedInProfile = table.Column<string>(nullable: true),
+                    PortfolioUrl = table.Column<string>(nullable: true),
+                    FormalPhoto = table.Column<string>(nullable: true),
+                    Resume = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Attachment", x => x.AttachmentId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Instructor",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    InstructorId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    IsActive = table.Column<bool>(nullable: false),
                     FirstName = table.Column<string>(type: "varchar(250)", nullable: true),
                     LastName = table.Column<string>(type: "varchar(250)", nullable: true),
                     Address = table.Column<string>(type: "varchar(500)", nullable: true),
                     PhoneNumber = table.Column<string>(type: "varchar(11)", nullable: true),
                     DateHired = table.Column<DateTime>(nullable: false),
-                    Salary = table.Column<float>(nullable: false)
+                    Salary = table.Column<float>(nullable: false),
+                    IsActive = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Instructor", x => x.Id);
+                    table.PrimaryKey("PK_Instructor", x => x.InstructorId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Jobs",
+                columns: table => new
+                {
+                    JobId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    JobTitle = table.Column<string>(nullable: true),
+                    Location = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Jobs", x => x.JobId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PersonalInformation",
+                columns: table => new
+                {
+                    PersonalInformationId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    FirstName = table.Column<string>(type: "varchar(250)", nullable: true),
+                    MiddleName = table.Column<string>(type: "varchar(250)", nullable: true),
+                    LastName = table.Column<string>(type: "varchar(250)", nullable: true),
+                    Sex = table.Column<string>(nullable: true),
+                    DateOfBirth = table.Column<DateTime>(nullable: false),
+                    Country = table.Column<string>(nullable: true),
+                    Province = table.Column<string>(nullable: true),
+                    ZipCode = table.Column<string>(nullable: true),
+                    AddressLine1 = table.Column<string>(nullable: true),
+                    AddressLine2 = table.Column<string>(nullable: true),
+                    EmailAddress = table.Column<string>(nullable: true),
+                    PhoneNumber = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PersonalInformation", x => x.PersonalInformationId);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Subject",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    SubjectId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    IsActive = table.Column<bool>(nullable: false),
                     Name = table.Column<string>(type: "varchar(30)", nullable: true),
                     Description = table.Column<string>(type: "varchar(100)", nullable: true),
                     Category = table.Column<string>(nullable: true),
-                    NumberOfCredits = table.Column<int>(nullable: false)
+                    NumberOfCredits = table.Column<int>(nullable: false),
+                    IsActive = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Subject", x => x.Id);
+                    table.PrimaryKey("PK_Subject", x => x.SubjectId);
                 });
 
             migrationBuilder.CreateTable(
@@ -190,34 +244,87 @@ namespace BaseCode.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "JobDescription",
+                columns: table => new
+                {
+                    JobDescriptionId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    JobId = table.Column<int>(nullable: false),
+                    Description = table.Column<string>(nullable: true),
+                    JobDescriptionId1 = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_JobDescription", x => x.JobDescriptionId);
+                    table.ForeignKey(
+                        name: "FK_JobDescription_JobDescription_JobDescriptionId1",
+                        column: x => x.JobDescriptionId1,
+                        principalTable: "JobDescription",
+                        principalColumn: "JobDescriptionId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_JobDescription_Jobs_JobId",
+                        column: x => x.JobId,
+                        principalTable: "Jobs",
+                        principalColumn: "JobId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "JobRequirement",
+                columns: table => new
+                {
+                    JobRequirementId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    JobId = table.Column<int>(nullable: false),
+                    Requirement = table.Column<string>(nullable: true),
+                    JobRequirementId1 = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_JobRequirement", x => x.JobRequirementId);
+                    table.ForeignKey(
+                        name: "FK_JobRequirement_Jobs_JobId",
+                        column: x => x.JobId,
+                        principalTable: "Jobs",
+                        principalColumn: "JobId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_JobRequirement_JobRequirement_JobRequirementId1",
+                        column: x => x.JobRequirementId1,
+                        principalTable: "JobRequirement",
+                        principalColumn: "JobRequirementId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Class",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    ClassId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    IsActive = table.Column<bool>(nullable: false),
                     ClassCode = table.Column<string>(nullable: true),
                     ClassName = table.Column<string>(nullable: true),
-                    From = table.Column<DateTime>(nullable: false),
-                    To = table.Column<DateTime>(nullable: false),
+                    DurationFrom = table.Column<DateTime>(nullable: false),
+                    DurationTo = table.Column<DateTime>(nullable: false),
                     SubjectId = table.Column<int>(nullable: false),
                     InstructorId = table.Column<int>(nullable: false),
                     RoomNumber = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Class", x => x.Id);
+                    table.PrimaryKey("PK_Class", x => x.ClassId);
                     table.ForeignKey(
                         name: "FK_Class_Instructor_InstructorId",
                         column: x => x.InstructorId,
                         principalTable: "Instructor",
-                        principalColumn: "Id",
+                        principalColumn: "InstructorId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Class_Subject_SubjectId",
                         column: x => x.SubjectId,
                         principalTable: "Subject",
-                        principalColumn: "Id",
+                        principalColumn: "SubjectId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -269,6 +376,26 @@ namespace BaseCode.Data.Migrations
                 name: "IX_Class_SubjectId",
                 table: "Class",
                 column: "SubjectId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_JobDescription_JobDescriptionId1",
+                table: "JobDescription",
+                column: "JobDescriptionId1");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_JobDescription_JobId",
+                table: "JobDescription",
+                column: "JobId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_JobRequirement_JobId",
+                table: "JobRequirement",
+                column: "JobId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_JobRequirement_JobRequirementId1",
+                table: "JobRequirement",
+                column: "JobRequirementId1");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -289,7 +416,19 @@ namespace BaseCode.Data.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Attachment");
+
+            migrationBuilder.DropTable(
                 name: "Class");
+
+            migrationBuilder.DropTable(
+                name: "JobDescription");
+
+            migrationBuilder.DropTable(
+                name: "JobRequirement");
+
+            migrationBuilder.DropTable(
+                name: "PersonalInformation");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -302,6 +441,9 @@ namespace BaseCode.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Subject");
+
+            migrationBuilder.DropTable(
+                name: "Jobs");
         }
     }
 }

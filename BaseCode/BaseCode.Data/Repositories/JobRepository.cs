@@ -2,6 +2,7 @@
 using BaseCode.Data.Models;
 using BaseCode.Data.ViewModels;
 using BaseCode.Data.ViewModels.Common;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,7 +54,9 @@ namespace BaseCode.Data.Repositories
 
         public ListViewModel FindJobs(JobSearchViewModel searchModel)
         {
-            var jobs = RetrieveAll();
+            var jobs = RetrieveAll().Include(j => j.JobDescriptions)
+                   .Include(j => j.JobRequirements)
+                   .ToList();
 
             if (searchModel.Page == 0) searchModel.Page = 1;
 
@@ -68,8 +71,8 @@ namespace BaseCode.Data.Repositories
                     id = job.Id,
                     jobTitle = job.JobTitle,
                     location = job.Location,
-                    jobDescriptions = job.JobDescriptions,
-                    jobRequirements = job.JobRequirements,
+                    jobDescriptions = job.JobDescriptions.Select(d => d.Description).ToList(),
+                    jobRequirements = job.JobRequirements.Select(r => r.Requirement).ToList()
                 }).ToList();
 
             var pagination = new

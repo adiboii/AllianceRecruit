@@ -15,7 +15,7 @@ namespace BaseCode.Domain.Services
 
         private readonly IJobRepository _jobRepository;
 
-        JobService(IJobRepository jobRepository)
+        public JobService(IJobRepository jobRepository)
         {
             _jobRepository = jobRepository;
         }   
