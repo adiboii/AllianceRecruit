@@ -37,16 +37,15 @@ namespace BaseCode.API
                     .ForMember(dest => dest.JobRequirements, opt => opt.MapFrom(src => src.JobRequirements.Select(r => new JobRequirement { Requirement = r })))
                     .ForMember(dest => dest.JobDescriptions, opt => opt.MapFrom(src => src.JobDescriptions.Select(d => new JobDescription { Description = d })));
 
-                cfg.CreateMap<JobRequirement, JobRequirementViewModel>()
-                    .ForMember(dest => dest.Requirement, opt => opt.MapFrom(src => src.Requirement));
-                cfg.CreateMap<JobRequirementViewModel, JobRequirement>()
-                    .ForMember(dest => dest.Requirement, opt => opt.MapFrom(src => src.Requirement));
+                cfg.CreateMap<JobRequirement, JobRequirementViewModel>();
+                cfg.CreateMap<JobRequirementViewModel, JobRequirement>();
 
-                cfg.CreateMap<JobDescription, JobDescriptionViewModel>()
-                    .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description));
+                cfg.CreateMap<JobDescription, JobDescriptionViewModel>();
+                cfg.CreateMap<JobDescriptionViewModel, JobDescription>();
 
-                cfg.CreateMap<JobDescriptionViewModel, JobDescription>()
-                   .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description));
+                cfg.CreateMap<Application, ApplicationViewModel>();
+                cfg.CreateMap<ApplicationViewModel, Application>();
+
             });
 
             services.AddSingleton(Config.CreateMapper());

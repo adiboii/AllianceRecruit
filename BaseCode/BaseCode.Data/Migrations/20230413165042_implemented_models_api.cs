@@ -298,6 +298,41 @@ namespace BaseCode.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Applications",
+                columns: table => new
+                {
+                    ApplicationId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    JobId = table.Column<int>(nullable: false),
+                    PersonalInformationId = table.Column<int>(nullable: false),
+                    AttachmentId = table.Column<int>(nullable: false),
+                    Status = table.Column<string>(nullable: true),
+                    DateTimeApplied = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Applications", x => x.ApplicationId);
+                    table.ForeignKey(
+                        name: "FK_Applications_Attachment_AttachmentId",
+                        column: x => x.AttachmentId,
+                        principalTable: "Attachment",
+                        principalColumn: "AttachmentId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Applications_Jobs_JobId",
+                        column: x => x.JobId,
+                        principalTable: "Jobs",
+                        principalColumn: "JobId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Applications_PersonalInformation_PersonalInformationId",
+                        column: x => x.PersonalInformationId,
+                        principalTable: "PersonalInformation",
+                        principalColumn: "PersonalInformationId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Class",
                 columns: table => new
                 {
@@ -327,6 +362,21 @@ namespace BaseCode.Data.Migrations
                         principalColumn: "SubjectId",
                         onDelete: ReferentialAction.Restrict);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Applications_AttachmentId",
+                table: "Applications",
+                column: "AttachmentId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Applications_JobId",
+                table: "Applications",
+                column: "JobId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Applications_PersonalInformationId",
+                table: "Applications",
+                column: "PersonalInformationId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -401,6 +451,9 @@ namespace BaseCode.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Applications");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
             migrationBuilder.DropTable(
@@ -416,9 +469,6 @@ namespace BaseCode.Data.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Attachment");
-
-            migrationBuilder.DropTable(
                 name: "Class");
 
             migrationBuilder.DropTable(
@@ -426,6 +476,9 @@ namespace BaseCode.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "JobRequirement");
+
+            migrationBuilder.DropTable(
+                name: "Attachment");
 
             migrationBuilder.DropTable(
                 name: "PersonalInformation");

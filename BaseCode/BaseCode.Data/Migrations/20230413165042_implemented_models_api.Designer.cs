@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BaseCode.Data.Migrations
 {
     [DbContext(typeof(BaseCodeEntities))]
-    [Migration("20230413150237_implemented_models_api")]
+    [Migration("20230413165042_implemented_models_api")]
     partial class implemented_models_api
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,6 +20,39 @@ namespace BaseCode.Data.Migrations
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("BaseCode.Data.Models.Application", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("ApplicationId")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AttachmentId")
+                        .HasColumnName("AttachmentId");
+
+                    b.Property<DateTime>("DateTimeApplied")
+                        .HasColumnName("DateTimeApplied");
+
+                    b.Property<int>("JobId")
+                        .HasColumnName("JobId");
+
+                    b.Property<int>("PersonalInformationId")
+                        .HasColumnName("PersonalInformationId");
+
+                    b.Property<string>("Status")
+                        .HasColumnName("Status");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AttachmentId");
+
+                    b.HasIndex("JobId");
+
+                    b.HasIndex("PersonalInformationId");
+
+                    b.ToTable("Applications");
+                });
 
             modelBuilder.Entity("BaseCode.Data.Models.Attachment", b =>
                 {
@@ -424,6 +457,24 @@ namespace BaseCode.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("BaseCode.Data.Models.Application", b =>
+                {
+                    b.HasOne("BaseCode.Data.Models.Attachment", "Attachment")
+                        .WithMany()
+                        .HasForeignKey("AttachmentId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("BaseCode.Data.Models.Job", "Job")
+                        .WithMany()
+                        .HasForeignKey("JobId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("BaseCode.Data.Models.PersonalInformation", "PersonalInformation")
+                        .WithMany()
+                        .HasForeignKey("PersonalInformationId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("BaseCode.Data.Models.Class", b =>
