@@ -54,9 +54,7 @@ namespace BaseCode.Data.Repositories
 
         public ListViewModel FindJobs(JobSearchViewModel searchModel)
         {
-            var jobs = RetrieveAll().Include(j => j.JobDescriptions)
-                   .Include(j => j.JobRequirements)
-                   .ToList();
+            var jobs = RetrieveAll();
 
             if (searchModel.Page == 0) searchModel.Page = 1;
 
@@ -64,6 +62,8 @@ namespace BaseCode.Data.Repositories
             var totalPages = (int)Math.Ceiling((double)totalCount / Constants.Subject.PageSize);
 
             var results = jobs.Skip(Constants.Subject.PageSize * (searchModel.Page - 1))
+                .Include(j => j.JobDescriptions)
+                .Include(j => j.JobRequirements)
                 .Take(Constants.Subject.PageSize)
                 .AsEnumerable()
                 .Select(job => new

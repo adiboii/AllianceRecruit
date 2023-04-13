@@ -193,5 +193,17 @@
             public const string JobDoesNotExist = "Job does not exist.";
             public const string JobExists = "Job already exists.";
         }
+
+        public class Application
+        {
+            // Success Messages
+            public const string ApplicationSuccessAdd = "Application added successfully.";
+            public const string ApplicationSuccessDelete = "Application removed successfully.";
+            public const string ApplicationSuccessUpdate = "Application updated successfully.";
+
+            // Error Messages
+            public const string ApplicationDoesNotExist = "Application does not exist.";
+            public const string ApplicationExists = "Application already exists.";
+        }
     }
 }
