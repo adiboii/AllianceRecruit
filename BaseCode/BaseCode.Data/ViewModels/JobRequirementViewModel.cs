@@ -9,10 +9,7 @@ namespace BaseCode.Data.ViewModels
 {
     public class JobRequirementViewModel
     {
-        [JsonProperty("job_id")]
-        public int JobId { get; set; }
-
-        [JsonProperty("requirement")]
+        [JsonProperty("job_requirement")]
         public string Requirement { get; set; }
     }
 }

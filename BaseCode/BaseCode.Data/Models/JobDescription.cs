@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace BaseCode.Data.Models
 {
@@ -14,10 +15,15 @@ namespace BaseCode.Data.Models
         [Column("JobDescriptionId")]
         public int Id { get; set; }
 
-        [Column("JobId")]
+        [ForeignKey("Job")]
         public int JobId { get; set; }
 
         [Column("Description")]
         public string Description { get; set; }
+
+        public virtual Job Job { get; set; }
+
+        [JsonIgnore] // ignore this property during serialization
+        public virtual ICollection<JobDescription> JobDescriptions { get; set; }
     }
 }
