@@ -65,6 +65,9 @@ namespace BaseCode.Data.Repositories
 
             var results = applications.Skip(Constants.Subject.PageSize * (searchModel.Page - 1))
                 .Include(a => a.Job)
+                    .ThenInclude(j => j.JobDescriptions)
+                .Include(a => a.Job)
+                    .ThenInclude(j => j.JobRequirements)
                 .Include(a => a.PersonalInformation)
                 .Include(a => a.Attachment)
                 .Take(Constants.Subject.PageSize)
@@ -74,7 +77,14 @@ namespace BaseCode.Data.Repositories
                     id = application.Id,
                     status = application.Status,
                     dateTimeApplied = application.DateTimeApplied,
-                    job = application.Job,
+                    job = new
+                    {
+                        id = application.Job.Id,
+                        JobTitle = application.Job.JobTitle,
+                        Location = application.Job.Location,
+                        JobRequirements = application.Job.JobRequirements.Select(jr => jr.Requirement),
+                        JobDescriptions = application.Job.JobDescriptions.Select(jd => jd.Description)
+                    },
                     personalInformation = application.PersonalInformation,
                     attachment = application.Attachment,
                 }).ToList();
