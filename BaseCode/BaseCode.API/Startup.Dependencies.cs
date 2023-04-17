@@ -17,26 +17,22 @@ namespace BaseCode.API
             services.AddScoped<ClaimsProvider, ClaimsProvider>();
 
             // Services
-            services.AddScoped<ISubjectService, SubjectService>();
-            services.AddScoped<IInstructorService, InstructorService>();    
-            services.AddScoped<IClassService, ClassService>();
             services.AddScoped<IPersonalInformationService, PersonalInformationService>();
             services.AddScoped<IJobRequirementService, JobRequirementService>();
             services.AddScoped<IJobDescriptionService, JobDescriptionService>();
             services.AddScoped<IAttachmentService, AttachmentService>();
             services.AddScoped<IJobService, JobService>();
             services.AddScoped<IApplicationService, ApplicationService>();
+            services.AddScoped<IUserService, UserService>();
 
             // Repositories
-            services.AddScoped<ISubjectRepository, SubjectRepository>();
-            services.AddScoped<IInstructorRepository, InstructorRepository>();  
-            services.AddScoped<IClassRepository, ClassRepository>();
             services.AddScoped<IPersonalInformationRepository, PersonalInformationRepository>();
             services.AddScoped<IJobRequirementRepository, JobRequirementRepository>();
             services.AddScoped<IJobDescriptionRepository, JobDescriptionRepository>();
             services.AddScoped<IAttachmentRepository, AttachmentRepository>();
             services.AddScoped<IJobRepository, JobRepository>();
             services.AddScoped<IApplicationRepository, ApplicationRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
         }
     }
 }

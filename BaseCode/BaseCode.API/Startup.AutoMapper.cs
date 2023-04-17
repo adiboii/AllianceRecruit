@@ -12,16 +12,6 @@ namespace BaseCode.API
         {
             var Config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<Subject, SubjectViewModel>();
-                cfg.CreateMap<SubjectViewModel, Subject>();
-    
-                cfg.CreateMap<Instructor, InstructorViewModel>();
-                cfg.CreateMap<InstructorViewModel, Instructor>();
-        
-                cfg.CreateMap<Class, ClassViewModel>();
-                cfg.CreateMap<ClassViewModel, Class>();
-                cfg.CreateMap<ClassViewModel, Instructor>();
-
                 cfg.CreateMap<PersonalInformation, PersonalInformationViewModel>();
                 cfg.CreateMap<PersonalInformationViewModel, PersonalInformation>();
 
