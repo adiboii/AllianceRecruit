@@ -21,6 +21,7 @@ namespace BaseCode.Data.Models
         [Column("Requirement")]
         public string Requirement { get; set; }
 
+        [JsonIgnore]
         public virtual Job Job { get; set; }
 
         [JsonIgnore] // ignore this property during serialization

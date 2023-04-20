@@ -20,7 +20,7 @@ namespace BaseCode.Data.Models
 
         [Column("Description")]
         public string Description { get; set; }
-
+        [JsonIgnore]
         public virtual Job Job { get; set; }
 
         [JsonIgnore] // ignore this property during serialization

@@ -39,7 +39,7 @@ namespace BaseCode.Data.Repositories
 
         public Job FindJob(int Id)
         {
-            return GetDbSet<Job>().FirstOrDefault(x => x.Id == Id);
+            return GetDbSet<Job>().Include(j => j.JobRequirements).Include(j => j.JobDescriptions).FirstOrDefault(x => x.Id == Id);
         }
 
         public bool JobExists(Job job)
@@ -83,5 +83,23 @@ namespace BaseCode.Data.Repositories
 
             return new ListViewModel { Pagination = pagination, Data = results };
         }
+
+        public object FindJobAsJson(int Id)
+        {
+            var job = GetDbSet<Job>().Include(j => j.JobRequirements).Include(j => j.JobDescriptions).FirstOrDefault(x => x.Id == Id);
+
+            if (job == null) return null;
+
+            return new
+            {
+                Id = job.Id,
+                JobTitle = job.JobTitle,
+                Location = job.Location,
+                JobDescriptions = job.JobDescriptions.Select(d => new { d.Description }).ToList(),
+                JobRequirements = job.JobRequirements.Select(r => new { r.Requirement }).ToList(),
+            };
+        }
+
+
     }
 }
