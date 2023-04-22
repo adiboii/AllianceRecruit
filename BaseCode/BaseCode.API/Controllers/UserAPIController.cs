@@ -4,8 +4,10 @@ using BaseCode.Domain.Contracts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.IdentityModel.Tokens.Jwt;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace BaseCode.API.Controllers
@@ -51,6 +53,23 @@ namespace BaseCode.API.Controllers
             var errorResult = GetErrorResult(result);
 
             return errorResult ? Helper.ComposeResponse(HttpStatusCode.BadRequest, Constants.Common.InvalidRole) : Helper.ComposeResponse(HttpStatusCode.OK, "Successfully added role");
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [ActionName("login")]
+        public async Task<HttpResponseMessage> PostLogin(string username, string password)
+        {
+
+            var result = await _userService.FindUserAsync(username, password);
+
+            if (result == null)
+            {
+                return Helper.ComposeResponse(HttpStatusCode.BadRequest, Constants.User.InvalidUserNamePassword);
+            }
+
+            return Helper.ComposeResponse(HttpStatusCode.OK, Constants.User.Success);
+
         }
 
         private bool GetErrorResult(IdentityResult result)
