@@ -60,6 +60,10 @@ namespace BaseCode.API.Controllers
         [ActionName("login")]
         public async Task<HttpResponseMessage> PostLogin(string username, string password)
         {
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                return Helper.ComposeResponse(HttpStatusCode.BadRequest, Constants.User.Empty);
+            }
 
             var result = await _userService.FindUserAsync(username, password);
 
