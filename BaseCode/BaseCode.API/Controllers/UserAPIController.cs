@@ -1,14 +1,20 @@
-﻿using BaseCode.Data;
+﻿using BaseCode.API.Authentication;
+using BaseCode.API.Utilities;
+using BaseCode.Data;
 using BaseCode.Data.ViewModels;
 using BaseCode.Domain.Contracts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Claims;
+using BaseCode.Data.Models;
 
 namespace BaseCode.API.Controllers
 {
@@ -58,7 +64,7 @@ namespace BaseCode.API.Controllers
         [AllowAnonymous]
         [HttpPost]
         [ActionName("login")]
-        public async Task<HttpResponseMessage> PostLogin(string username, string password)
+        public async Task<object> PostLogin(string username, string password)
         {
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
@@ -72,8 +78,24 @@ namespace BaseCode.API.Controllers
                 return Helper.ComposeResponse(HttpStatusCode.BadRequest, Constants.User.InvalidUserNamePassword);
             }
 
-            return Helper.ComposeResponse(HttpStatusCode.OK, Constants.User.Success);
+            // Token handling
+            // Encoding.ASCII.GetBytes(Configuration.Config.GetSection("BaseCode:AuthSecretKey").Value)
+            // SHA256: E79CA2B27F87CAA73D0A55C9F5F59C97036C51571F4F36D9617AE965FBE53357
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("E79CA2B27F87CAA73D0A55C9F5F59C97036C51571F4F36D9617AE965FBE53357"));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
+            var claims = new[]
+            {
+                new Claim("username", username),
+                new Claim("password", password),
+            };
+
+            var issuer = Configuration.Config.GetSection("BaseCode:Issuer").Value;
+            var audience = Configuration.Config.GetSection("BaseCode:Audience").Value;
+
+            var token = new JwtSecurityToken(issuer, audience, claims, expires: DateTime.UtcNow.AddDays(1), signingCredentials: credentials);
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
         private bool GetErrorResult(IdentityResult result)
