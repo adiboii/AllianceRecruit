@@ -15,7 +15,7 @@ namespace BaseCode.API.Utilities
     public class GetAuthResponse
     {
         /// <summary>
-        ///     Retrieves token options from appconfig.json 
+        ///     Retrieves token options from appconfig.json
         /// </summary>
         /// <returns></returns>
         public static TokenProviderOptions GetOptions()
@@ -41,46 +41,47 @@ namespace BaseCode.API.Utilities
         /// <param name="userName"></param>
         /// <param name="refreshToken"></param>
         /// <returns></returns>
-        //public static LoginViewModel Execute(ClaimsIdentity identity, BaseCodeEntities db, IdentityUser userName, RefreshToken refreshToken = null)
-        //{
-        //    var options = GetOptions();
-        //    var now = DateTime.UtcNow;
+        public static LoginViewModel Execute(ClaimsIdentity identity, BaseCodeEntities db, IdentityUser userName, RefreshToken refreshToken = null)
+        {
+           var options = GetOptions();
+           var now = DateTime.UtcNow;
 
 
-        //    if (refreshToken == null)
-        //    {
-        //        refreshToken = new RefreshToken()
-        //        {
-        //            Username = userName.UserName,
-        //            Token = Guid.NewGuid().ToString("N"),
-        //        };
-        //       // db.InsertNew(refreshToken);
-        //    }
+           if (refreshToken == null)
+           {
+               refreshToken = new RefreshToken()
+               {
+                   Username = userName.UserName,
+                   Token = Guid.NewGuid().ToString("N"),
+               };
+                db.Add(refreshToken);
+               // db.InsertNew(refreshToken);
+           }
 
-        //    refreshToken.IssuedUtc = now;
-        //    refreshToken.ExpiresUtc = now.Add(options.Expiration);
-        //    db.SaveChanges();
+           refreshToken.IssuedUtc = now;
+           refreshToken.ExpiresUtc = now.Add(options.Expiration);
+           db.SaveChanges();
 
-        //    var jwt = new JwtSecurityToken(
-        //        issuer: options.Issuer,
-        //        audience: options.Audience,
-        //        claims: identity.Claims,
-        //        notBefore: DateTime.UtcNow,
-        //        expires: DateTime.UtcNow.Add(options.Expiration),
-        //        signingCredentials: options.SigningCredentials
-        //    );
+           var jwt = new JwtSecurityToken(
+               issuer: options.Issuer,
+               audience: options.Audience,
+               claims: identity.Claims,
+               notBefore: DateTime.UtcNow,
+               expires: DateTime.UtcNow.Add(options.Expiration),
+               signingCredentials: options.SigningCredentials
+           );
 
-        //    IdentityModelEventSource.ShowPII = true;
+           IdentityModelEventSource.ShowPII = true;
 
-        //    var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
+           var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
 
-        //    var response = new LoginViewModel
-        //    {
-        //        access_token = encodedJwt,
-        //        refresh_token = refreshToken.Token,
-        //        expires_in = (int)options.Expiration.TotalSeconds,
-        //    };
-        //    return response;
-        //}
+           var response = new LoginViewModel
+           {
+               access_token = encodedJwt,
+               refresh_token = refreshToken.Token,
+               expires_in = (int)options.Expiration.TotalSeconds,
+           };
+           return response;
+        }
     }
 }
