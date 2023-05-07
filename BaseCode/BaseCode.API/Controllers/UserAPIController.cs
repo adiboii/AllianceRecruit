@@ -15,6 +15,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Claims;
 using BaseCode.Data.Models;
+using System.Linq;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace BaseCode.API.Controllers
 {
@@ -64,25 +66,37 @@ namespace BaseCode.API.Controllers
         [AllowAnonymous]
         [HttpPost]
         [ActionName("login")]
-        public async Task<object> PostLogin(string username, string password)
+        public async Task<object> PostLogin([FromBody] UserViewModel user)
         {
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(user.UserName) || string.IsNullOrEmpty(user.Password))
             {
                 return Helper.ComposeResponse(HttpStatusCode.BadRequest, Constants.User.Empty);
             }
 
-            var result = await _userService.FindUserAsync(username, password);
+            var result = await _userService.FindUserAsync(user.UserName, user.Password);
 
             if (result == null)
             {
                 return Helper.ComposeResponse(HttpStatusCode.BadRequest, Constants.User.InvalidUserNamePassword);
             }
 
-            return GenerateJwtToken(username);
+            var token = GenerateJwtToken(user);
+            return Ok(token);
+            // return GenerateJwtToken(username);
 
         }
 
-        private string GenerateJwtToken(string username)
+        [HttpGet]
+        [ActionName("test")]
+        [Authorize]
+        public IActionResult GetTest()
+        {
+            var currentUser = GetCurrentUser();
+
+            return Ok("test");
+        }
+
+        private string GenerateJwtToken(UserViewModel user)
         {
             // Token handling
             // Encoding.ASCII.GetBytes(Configuration.Config.GetSection("BaseCode:AuthSecretKey").Value)
@@ -94,15 +108,34 @@ namespace BaseCode.API.Controllers
 
             var claims = new[]
             {
-                new Claim("username", username),
+                //new Claim("username", username),
+                new Claim(ClaimTypes.NameIdentifier, user.UserName),
+                new Claim(ClaimTypes.Role, user.RoleName),
             };
 
             var issuer = Configuration.Config.GetSection("BaseCode:Issuer").Value;
             var audience = Configuration.Config.GetSection("BaseCode:Audience").Value;
 
-            var token = new JwtSecurityToken(issuer, audience, claims, expires: DateTime.UtcNow.AddDays(1), signingCredentials: credentials);
+            var token = new JwtSecurityToken(issuer, audience, claims, expires: DateTime.UtcNow.AddMinutes(30), signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+        private UserViewModel GetCurrentUser()
+        {
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+
+            if (identity == null) 
+            {
+                return null;
+            }
+            var userClaims = identity.Claims;
+
+            return new UserViewModel
+            {
+                UserName = userClaims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value,
+                RoleName = userClaims.FirstOrDefault(x => x.Type == ClaimTypes.Role)?.Value
+            };
         }
 
         private bool GetErrorResult(IdentityResult result)
