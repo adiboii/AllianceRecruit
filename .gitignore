@@ -14,3 +14,14 @@
 >>>>>>> bd04814e5553393bd432de7b6766e7f5323081f2
 /BaseCode/BaseCode.API/obj/Debug/netcoreapp2.2/BaseCode.API.csproj.AssemblyReference.cache~bd04814e5553393bd432de7b6766e7f5323081f2
 /BaseCode/BaseCode.Domain/obj/Debug/netcoreapp2.2/BaseCode.Domain.csproj.AssemblyReference.cache~bd04814e5553393bd432de7b6766e7f5323081f2
+/BaseCode/BaseCode.Data/obj/Debug/netcoreapp2.2/BaseCode.Data.dll
+/BaseCode/BaseCode.Data/bin/Debug/netcoreapp2.2/BaseCode.Data.dll
+/BaseCode/BaseCode.Data/bin/Debug/netcoreapp2.2/BaseCode.Data.pdb
+/BaseCode/BaseCode.Data/obj/Debug/netcoreapp2.2/BaseCode.Data.pdb
+/BaseCode/BaseCode.Domain/bin/Debug/netcoreapp2.2/BaseCode.Data.dll
+/BaseCode/BaseCode.Domain/bin/Debug/netcoreapp2.2/BaseCode.Data.pdb
+/BaseCode/BaseCode.Domain/bin/Debug/netcoreapp2.2/BaseCode.Domain.dll
+/BaseCode/BaseCode.Domain/bin/Debug/netcoreapp2.2/BaseCode.Domain.pdb
+/BaseCode/BaseCode.Domain/obj/Debug/netcoreapp2.2/BaseCode.Domain.csproj.AssemblyReference.cache
+/BaseCode/BaseCode.Domain/obj/Debug/netcoreapp2.2/BaseCode.Domain.dll
+/BaseCode/BaseCode.Domain/obj/Debug/netcoreapp2.2/BaseCode.Domain.pdb
