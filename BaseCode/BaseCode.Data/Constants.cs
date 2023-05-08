@@ -54,33 +54,11 @@
         {
             public const string Admin = "Administrator";
             public const string User = "User";
-
         }
 
         public class User
         {
             public const string InvalidUserNamePassword = "Invalid username or password.";
-        }
-
-        public class Student
-        {
-            // Sort Keys
-            public const string StudentHeaderId = "stud_id";
-            public const string StudentHeaderName = "stud_name";
-            public const string StudentHeaderEmail = "stud_email";
-            public const string StudentHeaderClass = "stud_class";
-            public const string StudentHeaderEnrollYear = "stud_enrollYear";
-            public const string StudentHeaderCity = "stud_city";
-            public const string StudentHeaderCountry = "stud_country";
-
-            // Messages
-            public const string StudentNameExists = "Student name already exists";
-            public const string StudentEntryInvalid = "Student entry is not valid!";
-            public const string StudentNotExist = "Student does not exist.";       
-            public const string StudentDoesNotExists = "Student does not exist.";
-            public const string StudentSuccessAdd = "Student added successfully.";
-            public const string StudentSuccessEdit = "Student is updated successfully.";
-            public const string StudentSuccessDelete = "Student is deleted successfully.";
         }
 
         public class Subject {
@@ -99,39 +77,9 @@
             public const string SubjectUpdateSuccess = "Subject updated successfully.";
         }
 
-        public class Instructor
-        {
-            public const int PageSize = 5;
-
-            // Messages
-            public const string InstructorSuccessAdd = "Instructor added sucessfully.";
-            public const string InstructorDoesNotExist = "Instructor does not exist.";
-            public const string InstructorSuccessDelete = "Instructor removed successfully.";
-            public const string InstructorExists = "Instructor already exists.";
-            public const string InstructorNameAlreadyTaken = "Instructor first name and last name already taken.";
-            public const string InstructorFirstNameTooLong = "Instructor First Name should not exceed 250.";
-            public const string InstructorLastNameTooLong = "Instructor Last Name should not exceed 250.";
-            public const string InstructorPhoneNumberTooLong = "Instructor Phone Number should not exceed 11.";
-            public const string InstructorAddressTooLong = "Instructor Address should not exceed 500";
-            public const string InstructorUpdateSuccess = "Instructor updated successfully.";
-        }
-
-        public class Class
-        {
-            public const int PageSize = 10;
-
-            // Messages
-            public const string ClassDoesNotExist = "Class does not exist.";
-            public const string ClassSuccessAdd = "Class added successfully.";
-            public const string ClassSuccessEdit = "Class edited successfully.";
-            public const string ClassSuccessDelete = "Class deleted successfully.";
-            public const string ClassExists = "Class already exists.";
-            public const string ClassFromIsGreaterThanTo = "Class From duration is greater than To.";
-
-        }
-
         public class PersonalInformation
         {
+            public const int PageSize = 15;
             // Success Messages
             public const string PersonalInformationSuccessAdd = "Personal information added successfully.";
             public const string PersonalInformationSuccessDelete = "Personal information removed successfully.";
@@ -148,10 +96,11 @@
 
         public class JobRequirement
         {
+            public const int PageSize = 15;
             // Success Messages
             public const string JobRequirementSuccessAdd = "Job Requirement added successfully.";
             public const string JobRequirementSuccessDelete = "Job Requirement removed successfully.";
-            public const string JobRequirementUpdateSuccess = "Job Requirement updated successfully.";
+            public const string JobRequirementSuccessUpdate = "Job Requirement updated successfully.";
 
             // Error Messages
             public const string JobRequirementDoesNotExist = "Job Requirement does not exist.";
@@ -160,10 +109,11 @@
 
         public class JobDescription
         {
+            public const int PageSize = 15;
             // Success Messages
             public const string JobDescriptionSuccessAdd = "Job Description added successfully.";
             public const string JobDescriptionSuccessDelete = "Job Description removed successfully.";
-            public const string JobDescriptionUpdateSuccess = "Job Description updated successfully.";
+            public const string JobDescriptionSuccessUpdate = "Job Description updated successfully.";
 
             // Error Messages
             public const string JobDescriptionDoesNotExist = "Job Description does not exist.";
@@ -172,10 +122,11 @@
 
         public class Attachment
         {
+            public const int PageSize = 15;
             // Success Messages
             public const string AttachmentSuccessAdd = "Attachment added successfully.";
             public const string AttachmentSuccessDelete = "Attachment removed successfully.";
-            public const string AttachmentUpdateSuccess = "Attachment updated successfully.";
+            public const string AttachmentSuccessUpdate = "Attachment updated successfully.";
 
             // Error Messages
             public const string AttachmentDoesNotExist = "Attachment does not exist.";
@@ -184,6 +135,7 @@
 
         public class Job
         {
+            public const int PageSize = 15;
             // Success Messages
             public const string JobSuccessAdd = "Job added successfully.";
             public const string JobSuccessDelete = "Job removed successfully.";
@@ -196,6 +148,7 @@
 
         public class Application
         {
+            public const int PageSize = 15;
             // Success Messages
             public const string ApplicationSuccessAdd = "Application added successfully.";
             public const string ApplicationSuccessDelete = "Application removed successfully.";

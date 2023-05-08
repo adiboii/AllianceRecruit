@@ -21,7 +21,7 @@ namespace BaseCode.Domain.Handlers
         {
             var validationErrors = new List<ValidationResult>();
 
-            if (attachment != null)
+            if (attachment == null)
             {
                 // Check if has duplicate already.
                 if (_attachmentService.AttachmentExists(attachment))

@@ -41,7 +41,12 @@ namespace BaseCode.Data.Repositories
 
         public bool ApplicationExists(Application application)
         {
-            return GetDbSet<Application>().Any(x => x.Id == application.Id);
+            return GetDbSet<Application>().
+                Any(x => x.JobId == application.JobId 
+                       && x.PersonalInformationId == application.PersonalInformationId
+                       && x.AttachmentId == application.AttachmentId
+                       && x.Status == application.Status
+                       && x.DateTimeApplied == application.DateTimeApplied);
         }
 
         public Application FindApplication(int Id)

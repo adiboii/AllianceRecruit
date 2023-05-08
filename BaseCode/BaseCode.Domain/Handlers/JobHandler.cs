@@ -28,7 +28,6 @@ namespace BaseCode.Domain.Handlers
                     validationErrors.Add(new ValidationResult(Constants.Job.JobExists));
                 }
 
-                
             }
 
             return validationErrors;

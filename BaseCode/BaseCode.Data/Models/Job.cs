@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace BaseCode.Data.Models
 {
@@ -18,9 +19,9 @@ namespace BaseCode.Data.Models
 
         [Column("Location")]
         public string Location { get; set; }
-
+   
         public virtual ICollection<JobRequirement> JobRequirements { get; set; }
-
+       
         public virtual ICollection<JobDescription> JobDescriptions { get; set; }
     }
 }

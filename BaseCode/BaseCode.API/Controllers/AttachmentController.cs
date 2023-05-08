@@ -5,6 +5,7 @@ using BaseCode.Data.ViewModels;
 using BaseCode.Domain;
 using BaseCode.Domain.Contracts;
 using BaseCode.Domain.Handlers;
+using BaseCode.Domain.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -67,7 +68,9 @@ namespace BaseCode.API.Controllers
                 if (ModelState.IsValid)
                 {
                     _attachmentService.Create(attachment);
-                    return Helper.ComposeResponse(HttpStatusCode.OK, Constants.Attachment.AttachmentSuccessAdd);
+                    int newId = attachment.Id;
+                    var response = Helper.ComposeResponse(HttpStatusCode.OK, Constants.Attachment.AttachmentSuccessAdd + " with ID " + newId);
+                    return response;
                 }
             }
             catch (Exception ex)
@@ -78,6 +81,9 @@ namespace BaseCode.API.Controllers
 
             return Helper.ComposeResponse(HttpStatusCode.BadRequest, Helper.GetModelStateErrors(ModelState));
         }
+
+
+
 
         [HttpPut]
         [ActionName("edit")]
@@ -103,7 +109,7 @@ namespace BaseCode.API.Controllers
                 if (ModelState.IsValid)
                 {
                     _attachmentService.Update(attachment);
-                    return Helper.ComposeResponse(HttpStatusCode.OK, Constants.Attachment.AttachmentUpdateSuccess);
+                    return Helper.ComposeResponse(HttpStatusCode.OK, Constants.Attachment.AttachmentSuccessUpdate);
                 }
             }
             catch (Exception ex)

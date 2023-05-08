@@ -22,12 +22,6 @@ namespace BaseCode.Domain.Handlers
 
             if (personalInformation != null)
             {
-                // Check if has duplicate already.
-                if (_personalInformationService.PersonalInformationExists(personalInformation))
-                {
-                    validationErrors.Add(new ValidationResult(Constants.PersonalInformation.PersonalInformationExists));
-                }
-
                 // Check if First Name exceeds 250.
                 if (personalInformation.FirstName.Length > 250)
                 {
@@ -77,12 +71,6 @@ namespace BaseCode.Domain.Handlers
             }
             else
             {
-                // Check if has duplicate already.
-                if (_personalInformationService.PersonalInformationExists(personalInformation))
-                {
-                    validationErrors.Add(new ValidationResult(Constants.PersonalInformation.PersonalInformationExists));
-                }
-
                 // Check if First Name exceeds 250.
                 if (personalInformation.FirstName.Length > 250)
                 {

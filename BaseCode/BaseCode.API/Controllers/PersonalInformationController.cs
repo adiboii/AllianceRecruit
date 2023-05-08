@@ -11,6 +11,7 @@ using System;
 using System.Linq;
 using BaseCode.Domain;
 using BaseCode.Data.Models;
+using System.Text;
 
 namespace BaseCode.API.Controllers
 {
@@ -66,7 +67,9 @@ namespace BaseCode.API.Controllers
                 if (ModelState.IsValid)
                 {
                     _personalInformationService.Create(personalInformation);
-                    return Helper.ComposeResponse(HttpStatusCode.OK, Constants.PersonalInformation.PersonalInformationSuccessAdd);
+                    int newId = personalInformation.Id;
+                    var response = Helper.ComposeResponse(HttpStatusCode.OK, Constants.PersonalInformation.PersonalInformationSuccessAdd + " with ID " + newId);
+                    return response;
                 }
             }
             catch (Exception ex)

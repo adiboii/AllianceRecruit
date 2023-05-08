@@ -44,7 +44,7 @@ namespace BaseCode.API.Controllers
             return job != null ? Helper.ComposeResponse(HttpStatusCode.OK, job) : Helper.ComposeResponse(HttpStatusCode.NotFound, Constants.Job.JobDoesNotExist);
         }
 
-        [HttpPost]
+        [HttpPost] 
         [ActionName("add")]
         public HttpResponseMessage PostJob(JobViewModel jobViewModel)
         {

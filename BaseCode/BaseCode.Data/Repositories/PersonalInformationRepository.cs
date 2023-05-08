@@ -53,7 +53,19 @@ namespace BaseCode.Data.Repositories
 
         public bool PersonalInformationExists(PersonalInformation personalInfo)
         {
-          return GetDbSet<PersonalInformation>().Any(x => x.FirstName == personalInfo.FirstName);
+          return GetDbSet<PersonalInformation>().
+                Any(x => x.FirstName == personalInfo.FirstName
+                    && x.MiddleName == personalInfo.MiddleName
+                    && x.LastName == personalInfo.LastName
+                    && x.Sex == personalInfo.Sex
+                    && x.DateOfBirth == personalInfo.DateOfBirth
+                    && x.Country == personalInfo.Country
+                    && x.Province == personalInfo.Province
+                    && x.ZipCode == personalInfo.ZipCode
+                    && x.AddressLine1 == personalInfo.AddressLine1
+                    && x.AddressLine2 == personalInfo.AddressLine2
+                    && x.EmailAddress == personalInfo.EmailAddress
+                    && x.PhoneNumber == personalInfo.PhoneNumber);
         }
 
         public IQueryable<PersonalInformation> RetrieveAll()

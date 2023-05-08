@@ -48,7 +48,7 @@ namespace BaseCode.API.Controllers
         public HttpResponseMessage PostApplication(ApplicationViewModel applicationViewModel)
         {
             if (!ModelState.IsValid)
-            {
+            { 
                 return Helper.ComposeResponse(HttpStatusCode.BadRequest, Helper.GetModelStateErrors(ModelState));
             }
 
@@ -132,7 +132,7 @@ namespace BaseCode.API.Controllers
                     var jobRequirement = _service.FindApplication(Id);
                     _service.Delete(jobRequirement);
 
-                    return Helper.ComposeResponse(HttpStatusCode.OK, Constants.Attachment.AttachmentSuccessDelete);
+                    return Helper.ComposeResponse(HttpStatusCode.OK, Constants.Application.ApplicationSuccessAdd);
                 }
 
             }

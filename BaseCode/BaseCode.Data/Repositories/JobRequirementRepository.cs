@@ -41,7 +41,9 @@ namespace BaseCode.Data.Repositories
 
         public bool JobRequirementExists(JobRequirement jobRequirement)
         {
-            return GetDbSet<JobRequirement>().Any(x => x.Requirement == jobRequirement.Requirement);    
+            return GetDbSet<JobRequirement>().
+                Any(x =>  x.JobId == jobRequirement.JobId
+                    && x.Requirement == jobRequirement.Requirement);    
         }
 
         public IQueryable<JobRequirement> RetrieveAll()

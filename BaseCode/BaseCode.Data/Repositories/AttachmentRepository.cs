@@ -43,7 +43,7 @@ namespace BaseCode.Data.Repositories
 
         public bool AttachmentExists(Attachment attachment)
         {
-            return GetDbSet<Attachment>().Any(x => x.LinkedInProfile== attachment.LinkedInProfile || x.PortfolioUrl == attachment.PortfolioUrl);
+            return GetDbSet<Attachment>().Any(x => x.Resume == attachment.Resume || x.FormalPhoto == attachment.FormalPhoto);
         }
 
         public IQueryable<Attachment> RetrieveAll()

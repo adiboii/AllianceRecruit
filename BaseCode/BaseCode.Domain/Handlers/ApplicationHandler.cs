@@ -24,12 +24,10 @@ namespace BaseCode.Domain.Handlers
 
             if (application != null)
             {
-                // Check if has duplicate already.
                 if (_applicationService.ApplicationExists(application))
                 {
                     validationErrors.Add(new ValidationResult(Constants.Application.ApplicationExists));
                 }
-
             }
 
             return validationErrors;
@@ -52,7 +50,7 @@ namespace BaseCode.Domain.Handlers
             var validationErrors = new List<ValidationResult>();
             if (application == null)
             {
-                validationErrors.Add(new ValidationResult(Constants.JobRequirement.JobRequirementDoesNotExist));
+                validationErrors.Add(new ValidationResult(Constants.Application.ApplicationDoesNotExist));
             }
             else
             {

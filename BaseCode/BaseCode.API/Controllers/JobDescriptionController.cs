@@ -101,7 +101,7 @@ namespace BaseCode.API.Controllers
                 if (ModelState.IsValid)
                 {
                     _jobDescriptionService.Update(jobDescription);
-                    return Helper.ComposeResponse(HttpStatusCode.OK, Constants.JobRequirement.JobRequirementUpdateSuccess);
+                    return Helper.ComposeResponse(HttpStatusCode.OK, Constants.JobRequirement.JobRequirementSuccessUpdate);
                 }
             }
             catch (Exception ex)
