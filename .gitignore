@@ -25,3 +25,8 @@
 /BaseCode/BaseCode.Domain/obj/Debug/netcoreapp2.2/BaseCode.Domain.csproj.AssemblyReference.cache
 /BaseCode/BaseCode.Domain/obj/Debug/netcoreapp2.2/BaseCode.Domain.dll
 /BaseCode/BaseCode.Domain/obj/Debug/netcoreapp2.2/BaseCode.Domain.pdb
+/BaseCode/.vs/ProjectEvaluation/basecode.metadata.v5.2
+/BaseCode/.vs/BaseCode/v17/.futdcache.v2
+*.dll
+*.pdb
+/BaseCode/.vs/ProjectEvaluation/basecode.projects.v5.2
