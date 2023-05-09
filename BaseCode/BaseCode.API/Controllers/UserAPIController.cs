@@ -36,6 +36,11 @@ namespace BaseCode.API.Controllers
         [ActionName("register")]
         public async Task<HttpResponseMessage> PostRegister(UserViewModel userModel)
         {
+            if (userModel.Password != userModel.ConfirmPassword)
+            {
+                return Helper.ComposeResponse(HttpStatusCode.BadRequest, "The password and confirmation password do not match.");
+            }
+
             if (!ModelState.IsValid)
             {
                 return Helper.ComposeResponse(HttpStatusCode.BadRequest, Helper.GetModelStateErrors(ModelState));
@@ -50,6 +55,7 @@ namespace BaseCode.API.Controllers
         [AllowAnonymous]
         [HttpPost]
         [ActionName("roles")]
+        [Authorize(Roles = "Administrator")]
         public async Task<HttpResponseMessage> PostCreateRole(string role)
         {
             if (string.IsNullOrEmpty(role))
@@ -82,19 +88,17 @@ namespace BaseCode.API.Controllers
 
             var token = GenerateJwtToken(user);
             return Ok(token);
-            // return GenerateJwtToken(username);
 
         }
 
-        [HttpGet]
-        [ActionName("test")]
-        [Authorize]
-        public IActionResult GetTest()
-        {
-            var currentUser = GetCurrentUser();
-
-            return Ok("test");
-        }
+        // [HttpGet]
+        // [ActionName("test")]
+        // [Authorize(Roles = "Administrator")]
+        // public IActionResult GetTest()
+        // {
+        //    var currentUser = GetCurrentUser();
+        //    return Ok("test");
+        // }
 
         private string GenerateJwtToken(UserViewModel user)
         {
@@ -103,12 +107,12 @@ namespace BaseCode.API.Controllers
             // SHA256: E79CA2B27F87CAA73D0A55C9F5F59C97036C51571F4F36D9617AE965FBE53357
 
             var securityKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.Config.GetSection("BaseCode:AuthSecretKey").Value));
-            //var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("E79CA2B27F87CAA73D0A55C9F5F59C97036C51571F4F36D9617AE965FBE53357"));
+            // var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("E79CA2B27F87CAA73D0A55C9F5F59C97036C51571F4F36D9617AE965FBE53357"));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new[]
             {
-                //new Claim("username", username),
+                // new Claim("username", username),
                 new Claim(ClaimTypes.NameIdentifier, user.UserName),
                 new Claim(ClaimTypes.Role, user.RoleName),
             };
