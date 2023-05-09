@@ -17,7 +17,7 @@ namespace BaseCode.Data.ViewModels
 
         [DataType(DataType.Password)]
         [JsonProperty(PropertyName = "confirm_pass")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        // [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
         [JsonProperty(PropertyName = "first_name")]
