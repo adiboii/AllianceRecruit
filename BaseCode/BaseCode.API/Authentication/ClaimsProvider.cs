@@ -11,16 +11,16 @@ namespace BaseCode.API.Authentication
 {
     public class ClaimsProvider
     {
-        //private readonly IUserService _userService;
+        private readonly IUserService _userService;
 
         ///// <summary>
         /////     Constructor for IUserService
         ///// </summary>
         ///// <param name="userService"></param>
-        //public ClaimsProvider(IUserService userService)
-        //{
-        //    _userService = userService;
-        //}
+        public ClaimsProvider(IUserService userService)
+        {
+           _userService = userService;
+        }
 
         /// <summary>
         ///     Used to retreive claimsIdentity for access token generation
@@ -29,64 +29,64 @@ namespace BaseCode.API.Authentication
         /// <param name="password"></param>
         /// <param name="db"></param>
         /// <returns></returns>
-        //public async Task<ClaimsIdentity> GetClaimsIdentityAsync(string username, string password, BaseCodeEntities db)
-        //{
-        //    ClaimsIdentity claimsIdentity = null;
+        public async Task<ClaimsIdentity> GetClaimsIdentityAsync(string username, string password, BaseCodeEntities db)
+        {
+           ClaimsIdentity claimsIdentity = null;
 
-        //    var user = await _userService.FindUserAsync(username, password);
-        //    if (user == null)
-        //    {
-        //        return await Task.FromResult<ClaimsIdentity>(null);
-        //    }
+           var user = await _userService.FindUserAsync(username, password);
+           if (user == null)
+           {
+               return await Task.FromResult<ClaimsIdentity>(null);
+           }
 
-        //    claimsIdentity = CreateClaimsIdentity(user, db);
-        //    return await Task.FromResult(claimsIdentity);
-        //}
+           claimsIdentity = CreateClaimsIdentity(user, db);
+           return await Task.FromResult(claimsIdentity);
+        }
 
-        ///// <summary>
-        /////      Used to retreive claimsIdentity for refresh token generation
-        ///// </summary>
-        ///// <param name="username"></param>
-        ///// <param name="db"></param>
-        ///// <returns></returns>
-        //public async Task<ClaimsIdentity> GetIdentityAsync(string username, BaseCodeEntities db)
-        //{
-        //    ClaimsIdentity claimsIdentity = null;
+        /// <summary>
+        ///      Used to retreive claimsIdentity for refresh token generation
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="db"></param>
+        /// <returns></returns>
+        public async Task<ClaimsIdentity> GetIdentityAsync(string username, BaseCodeEntities db)
+        {
+           ClaimsIdentity claimsIdentity = null;
 
-        //    var user = _userService.FindUser(username);
-        //    if (user == null)
-        //    {
-        //        return await Task.FromResult<ClaimsIdentity>(null);
-        //    }
+           var user = _userService.FindUser(username);
+           if (user == null)
+           {
+               return await Task.FromResult<ClaimsIdentity>(null);
+           }
 
-        //    claimsIdentity = CreateClaimsIdentity(user, db);
-        //    return await Task.FromResult(claimsIdentity);
-        //}
+           claimsIdentity = CreateClaimsIdentity(user, db);
+           return await Task.FromResult(claimsIdentity);
+        }
 
-        ///// <summary>
-        /////     Adds claims to claimsIdentity
-        ///// </summary>
-        ///// <param name="user"></param>
-        ///// <param name="db"></param>
-        ///// <returns></returns>
-        //public ClaimsIdentity CreateClaimsIdentity(User user, BaseCodeEntities db)
-        //{
-        //    var now = DateTime.UtcNow;
-        //    var claims = new List<Claim>();
+        /// <summary>
+        ///     Adds claims to claimsIdentity
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="db"></param>
+        /// <returns></returns>
+        public ClaimsIdentity CreateClaimsIdentity(User user, BaseCodeEntities db)
+        {
+           var now = DateTime.UtcNow;
+           var claims = new List<Claim>();
 
-        //    var userRoles = db.UserRoles.Where(i => i.UserId == user.Id);
-        //    foreach (var u in userRoles)
-        //    {
-        //        var role = db.Roles.Single(i => i.Id == u.RoleId);
-        //        claims.Add(new Claim(ClaimTypes.Role, role.Name));
-        //    }
+           var userRoles = db.UserRoles.Where(i => i.UserId == user.Id);
+           foreach (var u in userRoles)
+           {
+               var role = db.Roles.Single(i => i.Id == u.RoleId);
+               claims.Add(new Claim(ClaimTypes.Role, role.Name));
+           }
 
-        //    claims.Add(new Claim(Constants.ClaimTypes.UserName, user.Username));            
-        //    claims.Add(new Claim(Constants.ClaimTypes.ID, user.Id.ToString()));
-        //    claims.Add(new Claim(Constants.ClaimTypes.UserId, user.Id.ToString()));
-        //    claims.Add(new Claim(ClaimTypes.Name, user.Username));
+           claims.Add(new Claim(Constants.ClaimTypes.UserName, user.Username));
+           claims.Add(new Claim(Constants.ClaimTypes.ID, user.Id.ToString()));
+           claims.Add(new Claim(Constants.ClaimTypes.UserId, user.Id.ToString()));
+           claims.Add(new Claim(ClaimTypes.Name, user.Username));
 
-        //    return new ClaimsIdentity(claims);
-        //}
+           return new ClaimsIdentity(claims);
+        }
     }
 }

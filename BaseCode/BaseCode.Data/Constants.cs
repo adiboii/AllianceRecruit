@@ -58,7 +58,9 @@
 
         public class User
         {
+            public const string Empty = "Empty username or password.";
             public const string InvalidUserNamePassword = "Invalid username or password.";
+            public const string Success = "Successfull.";
         }
 
         public class Subject {
