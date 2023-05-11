@@ -4,14 +4,16 @@ using BaseCode.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BaseCode.Data.Migrations
 {
     [DbContext(typeof(BaseCodeEntities))]
-    partial class BaseCodeEntitiesModelSnapshot : ModelSnapshot
+    [Migration("20230511061827_added_users")]
+    partial class added_users
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -263,6 +265,9 @@ namespace BaseCode.Data.Migrations
                     b.Property<string>("PhoneNumber")
                         .HasColumnName("PhoneNumber")
                         .HasColumnType("varchar(11)");
+
+                    b.Property<string>("ProfilePhoto")
+                        .HasColumnName("ProfilePhoto");
 
                     b.Property<string>("UserID")
                         .HasColumnName("UserID");

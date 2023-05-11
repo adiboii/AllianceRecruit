@@ -22,6 +22,9 @@ namespace BaseCode.Data.ViewModels.Common
         [JsonProperty("userUsername")]
         public string UserUsername { get; set; }
 
+        [JsonProperty("userIsActive")]
+        public bool IsActive { get; set; }
+
         [JsonProperty("page")]
         public int Page { get; set; }
 

@@ -20,6 +20,9 @@ namespace BaseCode.Data.ViewModels
         [Column("status")]
         public string Status { get; set; }
 
+        [Column("remarks")]
+        public string Remarks { get; set; }
+
         [Column("date_time_applied")]
         public DateTime DateTimeApplied { get; set; }
     }

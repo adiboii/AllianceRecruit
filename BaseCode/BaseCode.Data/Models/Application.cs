@@ -26,6 +26,9 @@ namespace BaseCode.Data.Models
         [Column("Status")]
         public string Status { get; set; }
 
+        [Column("Remarks")]
+        public string Remarks { get; set; }
+
         [Column("DateTimeApplied")]
         public DateTime DateTimeApplied { get; set; }
         [ForeignKey("JobId")]

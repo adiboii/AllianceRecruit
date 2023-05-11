@@ -29,6 +29,7 @@ namespace BaseCode.Data.Repositories
             applicationUpdate.PersonalInformationId = application.PersonalInformationId;
             applicationUpdate.AttachmentId = application.AttachmentId;
             applicationUpdate.Status = application.Status;
+            applicationUpdate.Remarks = application.Remarks;
             application.DateTimeApplied = application.DateTimeApplied;
             UnitOfWork.SaveChanges();
         }
@@ -46,8 +47,9 @@ namespace BaseCode.Data.Repositories
                        && x.PersonalInformationId == application.PersonalInformationId
                        && x.AttachmentId == application.AttachmentId
                        && x.Status == application.Status
+                       && x.Remarks == application.Remarks
                        && x.DateTimeApplied == application.DateTimeApplied);
-        }
+        }   
 
         public Application FindApplication(int Id)
         {
@@ -61,14 +63,21 @@ namespace BaseCode.Data.Repositories
 
         public ListViewModel FindApplications(ApplicationSearchViewModel searchModel)
         {
-            var applications = RetrieveAll();
+            var sortDir = ((!string.IsNullOrEmpty(searchModel.SortOrder) && searchModel.SortOrder.Equals("dsc"))) ?
+                Constants.SortDirection.Descending : Constants.SortDirection.Ascending;
+
+            var applications = RetrieveAll()
+                .Where(x => (string.IsNullOrEmpty(searchModel.JobId) || x.JobId.ToString().Contains(searchModel.JobId)) &&
+                            (string.IsNullOrEmpty(searchModel.PersonalInformationId) || x.JobId.ToString().Contains(searchModel.PersonalInformationId)) &&
+                            (string.IsNullOrEmpty(searchModel.AttachmentId) || x.JobId.ToString().Contains(searchModel.AttachmentId)) &&
+                            (string.IsNullOrEmpty(searchModel.Status) || x.JobId.ToString().Contains(searchModel.Status)));
 
             if (searchModel.Page == 0) searchModel.Page = 1;
 
             var totalCount = applications.Count();
-            var totalPages = (int)Math.Ceiling((double)totalCount / Constants.Subject.PageSize);
+            var totalPages = (int)Math.Ceiling((double)totalCount / searchModel.PageSize);
 
-            var results = applications.Skip(Constants.Subject.PageSize * (searchModel.Page - 1))
+            var results = applications.Skip(Constants.Application.PageSize * (searchModel.Page - 1))
                 .Include(a => a.Job)
                     .ThenInclude(j => j.JobDescriptions)
                 .Include(a => a.Job)
@@ -102,7 +111,5 @@ namespace BaseCode.Data.Repositories
 
             return new ListViewModel { Pagination = pagination, Data = results };
         }
-
-       
     }
 }

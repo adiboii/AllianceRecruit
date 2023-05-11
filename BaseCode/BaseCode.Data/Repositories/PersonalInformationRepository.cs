@@ -80,7 +80,7 @@ namespace BaseCode.Data.Repositories
             if (searchModel.Page == 0) searchModel.Page = 1;
 
             var totalCount = personalInfos.Count();
-            var totalPages = (int)Math.Ceiling((double)totalCount / Constants.Subject.PageSize);
+            var totalPages = (int)Math.Ceiling((double)totalCount / searchModel.PageSize);
 
             var results = personalInfos.Skip(Constants.Subject.PageSize * (searchModel.Page - 1))
                 .Take(Constants.Subject.PageSize)

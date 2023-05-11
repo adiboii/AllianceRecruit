@@ -33,9 +33,6 @@ namespace BaseCode.Data.Models
         [Column("Password", TypeName = "varchar(25)")]
         public string Password { get; set; }
 
-        [Column("ProfilePhoto")]
-        public string ProfilePhoto { get; set; }
-
         [Column("CreatedBy")]
         public string CreatedBy { get; set; }
 

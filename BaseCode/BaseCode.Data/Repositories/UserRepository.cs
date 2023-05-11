@@ -28,7 +28,7 @@ namespace BaseCode.Data.Repositories
 
         public ListViewModel FindUsers(UserSearchViewModel searchModel)
         {
-            var sortKey = GetSortKey(searchModel.SortBy);
+            //var sortKey = GetSortKey(searchModel.SortBy);
             var sortDir = ((!string.IsNullOrEmpty(searchModel.SortOrder) && searchModel.SortOrder.Equals("dsc"))) ?
                 Constants.SortDirection.Descending : Constants.SortDirection.Ascending;
 
@@ -38,8 +38,8 @@ namespace BaseCode.Data.Repositories
                             (string.IsNullOrEmpty(searchModel.UserLastName) || x.LastName.Contains(searchModel.UserLastName)) &&
                             (string.IsNullOrEmpty(searchModel.UserEmail) || x.Email.Contains(searchModel.UserEmail)) &&
                             (string.IsNullOrEmpty(searchModel.UserPhoneNumber) || x.PhoneNumber.Contains(searchModel.UserPhoneNumber)) &&
-                            (string.IsNullOrEmpty(searchModel.UserUsername) || x.Username.Contains(searchModel.UserUsername)))
-                .OrderByPropertyName(sortKey, sortDir);
+                            (string.IsNullOrEmpty(searchModel.UserUsername) || x.Username.Contains(searchModel.UserUsername)));
+                //.OrderByPropertyName(sortKey, sortDir);
 
             if (searchModel.Page == 0)
                 searchModel.Page = 1;
@@ -245,7 +245,7 @@ namespace BaseCode.Data.Repositories
 
         public string GetSortKey(string sortBy)
         {
-            string sortKey;
+            string sortKey = "head";
 
             //switch (sortBy)
             //{

@@ -58,7 +58,7 @@ namespace BaseCode.Data.Repositories
             if (searchModel.Page == 0) searchModel.Page = 1;
 
             var totalCount = jobDescriptions.Count();
-            var totalPages = (int)Math.Ceiling((double)totalCount / Constants.Subject.PageSize);
+            var totalPages = (int)Math.Ceiling((double)totalCount / searchModel.PageSize);
 
             var results = jobDescriptions.Skip(Constants.Subject.PageSize * (searchModel.Page - 1))
              .Take(Constants.Subject.PageSize)
