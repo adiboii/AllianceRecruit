@@ -5,7 +5,7 @@
         public class Token
         {
             public const string Issuer = "BaseCode:Issuer";
-            public const string Audience = "BaseCode:Audience";            
+            public const string Audience = "BaseCode:Audience";
             public const string SecretKey = "BaseCode:AuthSecretKey";
             public const string POST = "POST";
             public const string TokenPath = "/api/token";
@@ -58,10 +58,18 @@
 
         public class User
         {
-            public const string Empty = "Empty username or password.";
             public const string InvalidUserNamePassword = "Invalid username or password.";
-            public const string Success = "Successfull.";
+            public const string UserDoesNotExist = "User does not exist";
+            public const string UserEditSuccessful = "User updated successfully";
+            public const string UserSoftDeleteSuccessful = "User soft deleted";
+
+            // Sort Keys
+            public const string UserHeaderId = "user_id";
+            public const string UserHeaderFirstName = "user_firstName";
+            public const string UserHeaderLastName = "user_lastName";
+            public const string UserHeaderUsername = "user_userame";
         }
+
 
         public class Subject {
             public const int PageSize = 15;
@@ -160,5 +168,9 @@
             public const string ApplicationDoesNotExist = "Application does not exist.";
             public const string ApplicationExists = "Application already exists.";
         }
+
+
+
     }
+
 }

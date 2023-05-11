@@ -12,9 +12,11 @@ namespace BaseCode.API
         {
             var Config = new MapperConfiguration(cfg =>
             {
+                cfg.CreateMap<User, UserViewModel>();
+                cfg.CreateMap<UserViewModel, User>();
+
                 cfg.CreateMap<PersonalInformation, PersonalInformationViewModel>();
                 cfg.CreateMap<PersonalInformationViewModel, PersonalInformation>();
-
                 
                 cfg.CreateMap<Attachment, AttachmentViewModel>();
                 cfg.CreateMap<AttachmentViewModel, Attachment>();

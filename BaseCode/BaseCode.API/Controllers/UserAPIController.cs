@@ -17,6 +17,8 @@ using System.Security.Claims;
 using BaseCode.Data.Models;
 using System.Linq;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using AutoMapper;
+using BaseCode.Data.ViewModels.Common;
 
 namespace BaseCode.API.Controllers
 {
@@ -25,10 +27,12 @@ namespace BaseCode.API.Controllers
     public class UserAPIController : ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly IMapper _mapper;
 
-        public UserAPIController(IUserService userService)
+        public UserAPIController(IUserService userService, IMapper mapper)
         {
             _userService = userService;
+            _mapper = mapper;
         }
 
         [AllowAnonymous]
@@ -36,17 +40,12 @@ namespace BaseCode.API.Controllers
         [ActionName("register")]
         public async Task<HttpResponseMessage> PostRegister(UserViewModel userModel)
         {
-            if (userModel.Password != userModel.ConfirmPassword)
-            {
-                return Helper.ComposeResponse(HttpStatusCode.BadRequest, "The password and confirmation password do not match.");
-            }
-
             if (!ModelState.IsValid)
             {
                 return Helper.ComposeResponse(HttpStatusCode.BadRequest, Helper.GetModelStateErrors(ModelState));
             }
 
-            var result = await _userService.RegisterUser(userModel.UserName, userModel.Password, userModel.FirstName, userModel.LastName, userModel.EmailAddress, userModel.RoleName);
+            var result = await _userService.RegisterUser(userModel.Username, userModel.Password, userModel.FirstName, userModel.LastName, userModel.Email, userModel.PhoneNumber, userModel.RoleName, userModel.IsActive);
             var errorResult = GetErrorResult(result);
 
             return errorResult ? Helper.ComposeResponse(HttpStatusCode.BadRequest, ModelState) : Helper.ComposeResponse(HttpStatusCode.OK, "Successfully added user");
@@ -55,7 +54,6 @@ namespace BaseCode.API.Controllers
         [AllowAnonymous]
         [HttpPost]
         [ActionName("roles")]
-        [Authorize(Roles = "Administrator")]
         public async Task<HttpResponseMessage> PostCreateRole(string role)
         {
             if (string.IsNullOrEmpty(role))
@@ -67,79 +65,6 @@ namespace BaseCode.API.Controllers
             var errorResult = GetErrorResult(result);
 
             return errorResult ? Helper.ComposeResponse(HttpStatusCode.BadRequest, Constants.Common.InvalidRole) : Helper.ComposeResponse(HttpStatusCode.OK, "Successfully added role");
-        }
-
-        [AllowAnonymous]
-        [HttpPost]
-        [ActionName("login")]
-        public async Task<object> PostLogin([FromBody] UserViewModel user)
-        {
-            if (string.IsNullOrEmpty(user.UserName) || string.IsNullOrEmpty(user.Password))
-            {
-                return Helper.ComposeResponse(HttpStatusCode.BadRequest, Constants.User.Empty);
-            }
-
-            var result = await _userService.FindUserAsync(user.UserName, user.Password);
-
-            if (result == null)
-            {
-                return Helper.ComposeResponse(HttpStatusCode.BadRequest, Constants.User.InvalidUserNamePassword);
-            }
-
-            var token = GenerateJwtToken(user);
-            return Ok(token);
-
-        }
-
-        // [HttpGet]
-        // [ActionName("test")]
-        // [Authorize(Roles = "Administrator")]
-        // public IActionResult GetTest()
-        // {
-        //    var currentUser = GetCurrentUser();
-        //    return Ok("test");
-        // }
-
-        private string GenerateJwtToken(UserViewModel user)
-        {
-            // Token handling
-            // Encoding.ASCII.GetBytes(Configuration.Config.GetSection("BaseCode:AuthSecretKey").Value)
-            // SHA256: E79CA2B27F87CAA73D0A55C9F5F59C97036C51571F4F36D9617AE965FBE53357
-
-            var securityKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.Config.GetSection("BaseCode:AuthSecretKey").Value));
-            // var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("E79CA2B27F87CAA73D0A55C9F5F59C97036C51571F4F36D9617AE965FBE53357"));
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-
-            var claims = new[]
-            {
-                // new Claim("username", username),
-                new Claim(ClaimTypes.NameIdentifier, user.UserName),
-                new Claim(ClaimTypes.Role, user.RoleName),
-            };
-
-            var issuer = Configuration.Config.GetSection("BaseCode:Issuer").Value;
-            var audience = Configuration.Config.GetSection("BaseCode:Audience").Value;
-
-            var token = new JwtSecurityToken(issuer, audience, claims, expires: DateTime.UtcNow.AddMinutes(30), signingCredentials: credentials);
-
-            return new JwtSecurityTokenHandler().WriteToken(token);
-        }
-
-        private UserViewModel GetCurrentUser()
-        {
-            var identity = HttpContext.User.Identity as ClaimsIdentity;
-
-            if (identity == null) 
-            {
-                return null;
-            }
-            var userClaims = identity.Claims;
-
-            return new UserViewModel
-            {
-                UserName = userClaims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value,
-                RoleName = userClaims.FirstOrDefault(x => x.Type == ClaimTypes.Role)?.Value
-            };
         }
 
         private bool GetErrorResult(IdentityResult result)
@@ -154,6 +79,234 @@ namespace BaseCode.API.Controllers
             }
 
             return flag;
+        }
+
+        /// <summary>
+        ///     This function retrieves a Student record.
+        /// </summary>
+        /// <param name="id">ID of the Student record</param>
+        /// <returns></returns>
+        [HttpGet]
+        [ActionName("getUser")]
+        public HttpResponseMessage GetUser(string id)
+        {
+            var status = _userService.FindById(id);
+            return status != null ? Helper.ComposeResponse(HttpStatusCode.OK, status) : Helper.ComposeResponse(HttpStatusCode.NotFound, Constants.User.UserDoesNotExist);
+        }
+
+        /// <summary>
+        ///     This function retrieves a list of Student records.
+        /// </summary>
+        /// <param name="searchModel">Search filters for finding Student records</param>
+        /// <returns></returns>
+        [HttpGet]
+        [ActionName("list")]
+        public HttpResponseMessage GetUserList([FromQuery] UserSearchViewModel searchModel)
+        {
+            var responseData = _userService.FindUsers(searchModel);
+            return Helper.ComposeResponse(HttpStatusCode.OK, responseData);
+        }
+
+        /// <summary>
+        ///     This function adds a Student record.
+        /// </summary>
+        /// <param name="studentModel">Contains Student properties</param>
+        /// <returns></returns>
+        /*
+        [HttpPost]
+        [ActionName("add")]
+        public HttpResponseMessage PostUser(UserViewModel statusModel)
+        {
+            if (!ModelState.IsValid) return Helper.ComposeResponse(HttpStatusCode.BadRequest, Helper.GetModelStateErrors(ModelState));
+
+            try
+            {
+                var status = _mapper.Map<User>(statusModel);
+                var validationErrors = new StatusHandler(_userService).CanAdd(status);
+                var validationResults = validationErrors as IList<ValidationResult> ?? validationErrors.ToList();
+
+                if (validationResults.Any())
+                {
+                    ModelState.AddModelErrors(validationResults);
+                }
+
+                if (ModelState.IsValid)
+                {
+                    var claimsIdentity = User.Identity as ClaimsIdentity;
+                    if (claimsIdentity != null)
+                    {
+                        status.CreatedBy = claimsIdentity.Name;
+                        status.CreatedDate = DateTime.Now;
+                    }
+
+                    _userService.Create(status);
+                    return Helper.ComposeResponse(HttpStatusCode.OK, Constants.Status.StatusSuccessAdd);
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+            }
+
+            return Helper.ComposeResponse(HttpStatusCode.BadRequest, Helper.GetModelStateErrors(ModelState));
+        } */
+
+        /// <summary>
+        ///     This function updates a Student record.
+        /// </summary>
+        /// <param name="studentModel">Contains Student properties</param>
+        /// <returns></returns>
+        [HttpPut]
+        [ActionName("edit")]
+        public HttpResponseMessage PutUser(UserViewModel statusModel)
+        {
+            if (!ModelState.IsValid) return Helper.ComposeResponse(HttpStatusCode.BadRequest, Helper.GetModelStateErrors(ModelState));
+            try
+            {
+                var user = _mapper.Map<User>(statusModel);
+                /*
+                var validationErrors = new StatusHandler(_userService).CanUpdate(status);
+                var validationResults = validationErrors as IList<ValidationResult> ?? validationErrors.ToList();
+
+                if (validationResults.Any())
+                {
+                    ModelState.AddModelErrors(validationResults);
+                }
+                */
+
+                if (ModelState.IsValid)
+                {
+                    var claimsIdentity = User.Identity as ClaimsIdentity;
+                    if (claimsIdentity != null)
+                    {
+                        user.ModifiedBy = claimsIdentity.Name;
+                        user.ModifiedDate = DateTime.Now;
+                    }
+
+                    _userService.Update(user);
+                    return Helper.ComposeResponse(HttpStatusCode.OK, Constants.User.UserEditSuccessful);
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+            }
+
+            return Helper.ComposeResponse(HttpStatusCode.BadRequest, Helper.GetModelStateErrors(ModelState));
+        }
+
+        [HttpPut]
+        [ActionName("editV2")]
+        public async Task<HttpResponseMessage> PutUserV2(UserViewModel statusModel)
+        {
+            if (!ModelState.IsValid) return Helper.ComposeResponse(HttpStatusCode.BadRequest, Helper.GetModelStateErrors(ModelState));
+            try
+            {
+                var user = _mapper.Map<User>(statusModel);
+                /*
+                var validationErrors = new StatusHandler(_userService).CanUpdate(status);
+                var validationResults = validationErrors as IList<ValidationResult> ?? validationErrors.ToList();
+
+                if (validationResults.Any())
+                {
+                    ModelState.AddModelErrors(validationResults);
+                }
+                
+                */
+                if (ModelState.IsValid)
+                {
+                    var claimsIdentity = User.Identity as ClaimsIdentity;
+                    if (claimsIdentity != null)
+                    {
+                        user.ModifiedBy = claimsIdentity.Name;
+                        user.ModifiedDate = DateTime.Now;
+                    }
+
+                    var result = await _userService.UpdateUser(user);
+                    var errorResult = GetErrorResult(result);
+                    return Helper.ComposeResponse(HttpStatusCode.OK, Constants.User.UserEditSuccessful);
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+            }
+
+            return Helper.ComposeResponse(HttpStatusCode.BadRequest, Helper.GetModelStateErrors(ModelState));
+        }
+
+        [HttpPut]
+        [ActionName("softdelete")]
+        public HttpResponseMessage SoftDeleteUser(UserViewModel statusModel)
+        {
+            if (!ModelState.IsValid) return Helper.ComposeResponse(HttpStatusCode.BadRequest, Helper.GetModelStateErrors(ModelState));
+            try
+            {
+                var user = _mapper.Map<User>(statusModel);
+                /*
+                var validationErrors = new StatusHandler(_userService).CanUpdate(status);
+                var validationResults = validationErrors as IList<ValidationResult> ?? validationErrors.ToList();
+
+                if (validationResults.Any())
+                {
+                    ModelState.AddModelErrors(validationResults);
+                }
+                */
+
+                if (ModelState.IsValid)
+                {
+                    var claimsIdentity = User.Identity as ClaimsIdentity;
+                    if (claimsIdentity != null)
+                    {
+                        user.ModifiedBy = claimsIdentity.Name;
+                        user.ModifiedDate = DateTime.Now;
+                    }
+
+                    _userService.SoftDelete(user);
+                    return Helper.ComposeResponse(HttpStatusCode.OK, Constants.User.UserSoftDeleteSuccessful);
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+            }
+
+            return Helper.ComposeResponse(HttpStatusCode.BadRequest, Helper.GetModelStateErrors(ModelState));
+        }
+
+        /// <summary>
+        ///     This function deletes a Student record.
+        /// </summary>
+        /// <param name="id">ID of the Student record</param>
+        /// <returns></returns>
+        [HttpDelete]
+        [ActionName("delete")]
+        public HttpResponseMessage DeleteUser(string id)
+        {
+            try
+            {
+                /*
+                var validationErrors = new StatusHandler(_userService).CanDelete(id);
+
+                var validationResults = validationErrors as IList<ValidationResult> ?? validationErrors.ToList();
+                if (validationResults.Any())
+                {
+                    ModelState.AddModelErrors(validationResults);
+                }
+                */
+
+                if (ModelState.IsValid)
+                {
+                    _userService.DeleteById(id);
+                    return Helper.ComposeResponse(HttpStatusCode.OK, Constants.User.UserSoftDeleteSuccessful);
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+            }
+
+            return Helper.ComposeResponse(HttpStatusCode.BadRequest, Helper.GetModelStateErrors(ModelState));
         }
     }
 }
